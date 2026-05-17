@@ -1,0 +1,81 @@
+{% extends "layouts/master.html" %}
+{% load static %}
+{% block content %}
+
+<!-- ABOUT HERO -->
+<section class="relative overflow-hidden py-24 bg-gradient-to-b ">
+  
+
+  <div class="max-w-7xl mx-auto px-6 text-center relative z-10">
+    <span class="inline-block px-6 py-2 bg-primary/20 border border-primary/40 rounded-full text-primary font-medium mb-6">
+      <i class="fas fa-rocket mr-2"></i> ABOUT FLORANODES
+    </span>
+
+    <h1 class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight">
+      We Don’t Just Host Servers<br>
+      <span class="bg-gradient-to-r from-purple-400 via-fuchsia-400 to-pink-400 bg-clip-text text-transparent">
+        We Grow Your World
+      </span>
+    </h1>
+
+    <p class="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+      From a bedroom idea to powering India's fastest Minecraft nodes — FloraNodes delivers trust, performance, and innovation without compromise.
+    </p>
+  </div>
+</section>
+
+<!-- OUR JOURNEY -->
+<section class="py-20 px-6" style="margin-top:-90px;">
+  <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+
+    <div class="space-y-8">
+      <h2 class="text-4xl md:text-5xl font-bold">Our Journey Started with Passion</h2>
+
+      <div class="space-y-6 text-lg text-gray-300 leading-relaxed">
+        <p>
+          What began as a simple idea quickly grew into **FloraNodes**, a state-of-the-art hosting platform built on real experience, mistakes, and evolution.
+        </p>
+        <p>
+          Today, we run <strong>hybrid Ryzen + EPYC</strong> clusters powered by DDR5 RAM, Gen4/Gen5 NVMe, and enterprise-grade security — built for Minecraft servers that deserve real performance.
+        </p>
+        <p class="text-primary font-bold text-xl">
+          No lag. No overselling. Just pure performance engineered for creators.
+        </p>
+      </div>
+
+      <!-- Stats -->
+      <div class="grid grid-cols-3 gap-6 mt-10">
+        <div class="text-center">
+          <div class="text-4xl font-bold text-primary">100K+</div>
+          <div class="text-gray-400">Players Hosted</div>
+        </div>
+        <div class="text-center">
+          <div class="text-4xl font-bold text-primary">1.8ms</div>
+          <div class="text-gray-400">Avg. Latency</div>
+        </div>
+        <div class="text-center">
+          <div class="text-4xl font-bold text-primary">0%</div>
+          <div class="text-gray-400">Overselling Policy</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="relative">
+      <img 
+        src="{% static 'images/logo.png' %}" 
+        class="rounded-2xl shadow-[0_0_40px_10px_rgba(150,50,255,0.25)] border border-primary/20"
+        alt="FloraNodes Server"
+      >
+
+      <div class="absolute -bottom-6 left-1/2 -translate-x-1/2 
+                  bg-primary/20 backdrop-blur-xl border border-primary/40 
+                  rounded-xl px-8 py-4 shadow-xl text-center">
+        <div class="text-3xl font-bold">2025 → 2026</div>
+        <div class="text-gray-300">From 1 Node to a Global Network</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+{% endblock content %}

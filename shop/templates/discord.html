@@ -1,0 +1,331 @@
+{% extends "layouts/master.html" %}
+{% load static %}
+
+{% block head %}
+<meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Discord Bot Hosting – GlitchX</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          animation: {
+            'fade-in': 'fadeIn 0.6s ease-out forwards',
+            'float': 'float 3s ease-in-out infinite',
+            'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: 0, transform: 'translateY(20px)' },
+              '100%': { opacity: 1, transform: 'translateY(0)' }
+            },
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-8px)' }
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+{% endblock head %}
+
+{% block style %}
+* {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .glow {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.2);
+  }
+  
+  .card-glow {
+    box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.15);
+  }
+  
+  .feature-badge {
+    background: linear-gradient(90deg, rgba(59, 130, 246, 0.15), rgba(99, 102, 241, 0.15));
+  }
+  
+  .popular-badge {
+    background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+    animation: pulse-slow 4s infinite;
+  }
+  
+  .plan-card {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+    transform-origin: center;
+  }
+  
+  .plan-card:hover {
+    transform: translateY(-8px);
+  }
+  
+  .toggler {
+    transition: all 0.3s ease;
+  }
+  
+  .toggler.active {
+    background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+  }
+
+{% endblock style %}
+
+
+
+{% block content %}
+
+<div class="max-w-7xl mx-auto">
+    <!-- Animated Header -->
+    <div class="text-center mb-12 md:mb-16 animate-fade-in">
+      <div class="inline-block mb-6">
+        <span class="popular-badge text-xs font-bold py-1 px-3 rounded-full uppercase tracking-wider">New & Improved</span>
+      </div>
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-blue-400 via-purple-400 to-purple-500 text-transparent bg-clip-text mb-3 md:mb-4">
+        Discord Bot Hosting Plans
+      </h1>
+      <p class="text-gray-400 max-w-2xl mx-auto text-base md:text-lg">
+        Start your bot journey with powerful and scalable hosting. Trusted by 15,000+ developers.
+      </p>
+      
+      <!-- Pricing Toggle -->
+      <div class="mt-8 flex justify-center">
+        <div class="flex items-center bg-gray-800 rounded-full p-1">
+          <button id="monthly" class="toggler active text-sm font-medium py-2 px-6 rounded-full">Monthly</button>
+          <button id="yearly" class="toggler text-sm font-medium py-2 px-6 rounded-full">Yearly <span class="bg-green-500/20 text-green-400 text-xs py-0.5 px-2 rounded-full ml-1">-20%</span></button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Features Banner -->
+    <div class="max-w-5xl mx-auto mb-12 md:mb-16 animate-fade-in">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="feature-badge p-4 rounded-xl flex items-center">
+          <i class="fas fa-bolt text-blue-400 text-lg mr-3"></i>
+          <span class="text-sm font-medium">Instant Setup</span>
+        </div>
+        <div class="feature-badge p-4 rounded-xl flex items-center">
+          <i class="fas fa-shield-alt text-purple-400 text-lg mr-3"></i>
+          <span class="text-sm font-medium">DDoS Protection</span>
+        </div>
+        <div class="feature-badge p-4 rounded-xl flex items-center">
+          <i class="fas fa-globe text-blue-400 text-lg mr-3"></i>
+          <span class="text-sm font-medium">Global Network</span>
+        </div>
+        <div class="feature-badge p-4 rounded-xl flex items-center">
+          <i class="fas fa-headset text-purple-400 text-lg mr-3"></i>
+          <span class="text-sm font-medium">24/7 Support</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Plans -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-7xl mx-auto">
+      <!-- Plan 1 -->
+      <div class="plan-card bg-gradient-to-br from-[#0d0d11] to-[#0a0a0f] border border-blue-800/30 p-6 rounded-2xl backdrop-blur-sm opacity-0 [animation-delay:0.1s] animate-fade-in">
+        <div class="flex justify-between items-start mb-4">
+          <h2 class="text-xl font-bold text-blue-400">Starter</h2>
+          <span class="text-xs font-semibold bg-blue-900/30 text-blue-300 py-1 px-2 rounded">Entry Level</span>
+        </div>
+        <div class="text-3xl font-extrabold mb-1">₹29</div>
+        <div class="text-sm text-gray-400 mb-6">Per Month</div>
+        <ul class="space-y-3 text-gray-300 text-left mb-6">
+          <li class="flex items-center"><i class="fas fa-memory text-blue-400 mr-3"></i>256MB RAM</li>
+          <li class="flex items-center"><i class="fas fa-hdd text-blue-400 mr-3"></i>1GB Disk</li>
+          <li class="flex items-center"><i class="fas fa-microchip text-blue-400 mr-3"></i>25% CPU</li>
+          <li class="flex items-center"><i class="fas fa-cloud text-blue-400 mr-3"></i>1 Backup</li>
+          <li class="flex items-center"><i class="fas fa-plug text-blue-400 mr-3"></i>Unlimited Bandwidth</li>
+        </ul>
+        <button class="w-full py-3 font-semibold text-white bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg transition hover:from-blue-500 hover:to-purple-500 hover:shadow-lg">Get Started</button>
+      </div>
+
+      <!-- Plan 2 -->
+      <div class="plan-card bg-gradient-to-br from-[#0d0d11] to-[#0a0a0f] border border-blue-800/30 p-6 rounded-2xl backdrop-blur-sm opacity-0 [animation-delay:0.2s] animate-fade-in">
+        <div class="flex justify-between items-start mb-4">
+          <h2 class="text-xl font-bold text-blue-400">Basic</h2>
+          <span class="text-xs font-semibold bg-blue-900/30 text-blue-300 py-1 px-2 rounded">Popular</span>
+        </div>
+        <div class="text-3xl font-extrabold mb-1">₹70</div>
+        <div class="text-sm text-gray-400 mb-6">Per Month</div>
+        <ul class="space-y-3 text-gray-300 text-left mb-6">
+          <li class="flex items-center"><i class="fas fa-memory text-blue-400 mr-3"></i>512MB RAM</li>
+          <li class="flex items-center"><i class="fas fa-hdd text-blue-400 mr-3"></i>2GB Disk</li>
+          <li class="flex items-center"><i class="fas fa-microchip text-blue-400 mr-3"></i>50% CPU</li>
+          <li class="flex items-center"><i class="fas fa-cloud text-blue-400 mr-3"></i>2 Backups</li>
+          <li class="flex items-center"><i class="fas fa-plug text-blue-400 mr-3"></i>Unlimited Bandwidth</li>
+        </ul>
+        <button class="w-full py-3 font-semibold text-white bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg transition hover:from-blue-500 hover:to-purple-500 hover:shadow-lg">Get Started</button>
+      </div>
+
+      <!-- Plan 3 (Popular) -->
+      <div class="plan-card bg-gradient-to-br from-[#0d0d11] to-[#0a0a0f] border border-blue-500/40 p-6 rounded-2xl backdrop-blur-sm card-glow relative overflow-hidden opacity-0 [animation-delay:0.3s] animate-fade-in">
+        <div class="absolute top-4 -right-10 bg-gradient-to-r from-blue-600 to-purple-500 text-white text-xs font-bold py-1 px-8 transform rotate-45">
+          POPULAR
+        </div>
+        <div class="flex justify-between items-start mb-4">
+          <h2 class="text-xl font-bold text-blue-300">Advanced</h2>
+          <span class="text-xs font-semibold bg-purple-900/30 text-purple-300 py-1 px-2 rounded">Recommended</span>
+        </div>
+        <div class="text-3xl font-extrabold mb-1">₹129</div>
+        <div class="text-sm text-gray-400 mb-6">Per Month</div>
+        <ul class="space-y-3 text-gray-300 text-left mb-6">
+          <li class="flex items-center"><i class="fas fa-memory text-blue-300 mr-3"></i>1GB RAM</li>
+          <li class="flex items-center"><i class="fas fa-hdd text-blue-300 mr-3"></i>4GB Disk</li>
+          <li class="flex items-center"><i class="fas fa-microchip text-blue-300 mr-3"></i>100% CPU</li>
+          <li class="flex items-center"><i class="fas fa-cloud text-blue-300 mr-3"></i>3 Backups</li>
+          <li class="flex items-center"><i class="fas fa-plug text-blue-300 mr-3"></i>Unlimited Bandwidth</li>
+          <li class="flex items-center"><i class="fas fa-rocket text-purple-300 mr-3"></i>Priority Support</li>
+        </ul>
+        <button class="w-full py-3 font-semibold text-white bg-gradient-to-r from-purple-500 to-purple-600 rounded-lg transition hover:from-blue-500 hover:to-purple-500 hover:shadow-lg glow">Get Started</button>
+      </div>
+
+      <!-- Plan 4 -->
+      <div class="plan-card bg-gradient-to-br from-[#0d0d11] to-[#0a0a0f] border border-blue-800/30 p-6 rounded-2xl backdrop-blur-sm opacity-0 [animation-delay:0.4s] animate-fade-in">
+        <div class="flex justify-between items-start mb-4">
+          <h2 class="text-xl font-bold text-blue-400">Pro</h2>
+          <span class="text-xs font-semibold bg-blue-900/30 text-blue-300 py-1 px-2 rounded">High Perf</span>
+        </div>
+        <div class="text-3xl font-extrabold mb-1">₹249</div>
+        <div class="text-sm text-gray-400 mb-6">Per Month</div>
+        <ul class="space-y-3 text-gray-300 text-left mb-6">
+          <li class="flex items-center"><i class="fas fa-memory text-blue-400 mr-3"></i>2GB RAM</li>
+          <li class="flex items-center"><i class="fas fa-hdd text-blue-400 mr-3"></i>8GB Disk</li>
+          <li class="flex items-center"><i class="fas fa-microchip text-blue-400 mr-3"></i>200% CPU</li>
+          <li class="flex items-center"><i class="fas fa-cloud text-blue-400 mr-3"></i>4 Backups</li>
+          <li class="flex items-center"><i class="fas fa-plug text-blue-400 mr-3"></i>Unlimited Bandwidth</li>
+        </ul>
+        <button class="w-full py-3 font-semibold text-white bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg transition hover:from-blue-500 hover:to-purple-500 hover:shadow-lg">Get Started</button>
+      </div>
+      
+      <!-- Plan 5 -->
+      <div class="plan-card bg-gradient-to-br from-[#0d0d11] to-[#0a0a0f] border border-blue-800/30 p-6 rounded-2xl backdrop-blur-sm opacity-0 [animation-delay:0.5s] animate-fade-in">
+        <div class="flex justify-between items-start mb-4">
+          <h2 class="text-xl font-bold text-blue-400">Premium</h2>
+          <span class="text-xs font-semibold bg-blue-900/30 text-blue-300 py-1 px-2 rounded">Powerful</span>
+        </div>
+        <div class="text-3xl font-extrabold mb-1">₹479</div>
+        <div class="text-sm text-gray-400 mb-6">Per Month</div>
+        <ul class="space-y-3 text-gray-300 text-left mb-6">
+          <li class="flex items-center"><i class="fas fa-memory text-blue-400 mr-3"></i>4GB RAM</li>
+          <li class="flex items-center"><i class="fas fa-hdd text-blue-400 mr-3"></i>16GB Disk</li>
+          <li class="flex items-center"><i class="fas fa-microchip text-blue-400 mr-3"></i>400% CPU</li>
+          <li class="flex items-center"><i class="fas fa-cloud text-blue-400 mr-3"></i>4 Backups</li>
+          <li class="flex items-center"><i class="fas fa-plug text-blue-400 mr-3"></i>Unlimited Bandwidth</li>
+          <li class="flex items-center"><i class="fas fa-server text-blue-400 mr-3"></i>Dedicated IP</li>
+        </ul>
+        <button class="w-full py-3 font-semibold text-white bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg transition hover:from-blue-500 hover:to-purple-500 hover:shadow-lg">Get Started</button>
+      </div>    
+
+      <!-- Plan 6 -->
+      <div class="plan-card bg-gradient-to-br from-[#0d0d11] to-[#0a0a0f] border border-blue-800/30 p-6 rounded-2xl backdrop-blur-sm opacity-0 [animation-delay:0.6s] animate-fade-in">
+        <div class="flex justify-between items-start mb-4">
+          <h2 class="text-xl font-bold text-blue-400">Business</h2>
+          <span class="text-xs font-semibold bg-blue-900/30 text-blue-300 py-1 px-2 rounded">Heavy Duty</span>
+        </div>
+        <div class="text-3xl font-extrabold mb-1">₹999</div>
+        <div class="text-sm text-gray-400 mb-6">Per Month</div>
+        <ul class="space-y-3 text-gray-300 text-left mb-6">
+          <li class="flex items-center"><i class="fas fa-memory text-blue-400 mr-3"></i>8GB RAM</li>
+          <li class="flex items-center"><i class="fas fa-hdd text-blue-400 mr-3"></i>32GB Disk</li>
+          <li class="flex items-center"><i class="fas fa-microchip text-blue-400 mr-3"></i>800% CPU</li>
+          <li class="flex items-center"><i class="fas fa-cloud text-blue-400 mr-3"></i>4 Backups</li>
+          <li class="flex items-center"><i class="fas fa-plug text-blue-400 mr-3"></i>Unlimited Bandwidth</li>
+          <li class="flex items-center"><i class="fas fa-server text-blue-400 mr-3"></i>Dedicated IP</li>
+        </ul>
+        <button class="w-full py-3 font-semibold text-white bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg transition hover:from-blue-500 hover:to-purple-500 hover:shadow-lg">Get Started</button>
+      </div>
+
+      <!-- Plan 7 -->
+      <div class="plan-card bg-gradient-to-br from-[#0d0d11] to-[#0a0a0f] border border-purple-800/40 p-6 rounded-2xl backdrop-blur-sm card-glow opacity-0 [animation-delay:0.7s] animate-fade-in">
+        <div class="flex justify-between items-start mb-4">
+          <h2 class="text-xl font-bold text-purple-400">Enterprise</h2>
+          <span class="text-xs font-semibold bg-purple-900/30 text-purple-300 py-1 px-2 rounded">Max Power</span>
+        </div>
+        <div class="text-3xl font-extrabold mb-1">₹1899</div>
+        <div class="text-sm text-gray-400 mb-6">Per Month</div>
+        <ul class="space-y-3 text-gray-300 text-left mb-6">
+          <li class="flex items-center"><i class="fas fa-memory text-purple-400 mr-3"></i>16GB RAM</li>
+          <li class="flex items-center"><i class="fas fa-hdd text-purple-400 mr-3"></i>64GB Disk</li>
+          <li class="flex items-center"><i class="fas fa-microchip text-purple-400 mr-3"></i>1600% CPU</li>
+          <li class="flex items-center"><i class="fas fa-cloud text-purple-400 mr-3"></i>8 Backups</li>
+          <li class="flex items-center"><i class="fas fa-plug text-purple-400 mr-3"></i>Unlimited Bandwidth</li>
+          <li class="flex items-center"><i class="fas fa-server text-purple-400 mr-3"></i>Dedicated IP</li>
+          <li class="flex items-center"><i class="fas fa-shield-alt text-purple-400 mr-3"></i>Premium DDoS Protection</li>
+        </ul>
+        <button class="w-full py-3 font-semibold text-white bg-gradient-to-r from-purple-600 to-purple-700 rounded-lg transition hover:from-purple-500 hover:to-blue-500 hover:shadow-lg">Get Started</button>
+      </div>
+    </div>
+    
+    <!-- FAQ Section -->
+    <div class="max-w-4xl mx-auto mt-16 md:mt-24 px-4">
+      <h2 class="text-2xl md:text-3xl font-bold text-center mb-8">Frequently Asked Questions</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-gray-800/40 p-5 rounded-xl border border-gray-700/50">
+          <h3 class="font-semibold text-blue-300 mb-2 flex items-center"><i class="fas fa-question-circle mr-2"></i> Can I upgrade my plan later?</h3>
+          <p class="text-gray-400 text-sm">Yes, you can upgrade at any time without downtime. We'll automatically prorate the difference.</p>
+        </div>
+        <div class="bg-gray-800/40 p-5 rounded-xl border border-gray-700/50">
+          <h3 class="font-semibold text-blue-300 mb-2 flex items-center"><i class="fas fa-question-circle mr-2"></i> How quickly can I set up my bot?</h3>
+          <p class="text-gray-400 text-sm">Most bots are deployed within 2 minutes after payment</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- CTA Banner -->
+    <div class="max-w-4xl mx-auto mt-16 md:mt-24 mb-8 md:mb-16 bg-gradient-to-r from-blue-900/20 to-purple-900/20 border border-blue-700/30 rounded-2xl p-8 md:p-12 text-center">
+      <div class="inline-block mb-5">
+        <span class="bg-blue-500/10 text-blue-300 text-xs font-bold py-1.5 px-4 rounded-full uppercase tracking-wider">Special Offer</span>
+      </div>
+      <h2 class="text-2xl md:text-3xl font-bold mb-4">Ready to power your Discord bot?</h2>
+      <p class="text-gray-400 max-w-2xl mx-auto mb-6">high-performance bot hosting.</p>
+      <button class="py-3 px-8 font-bold text-white bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg transition hover:from-blue-400 hover:to-purple-400 hover:scale-105 glow">
+        Get Started Today <i class="fas fa-arrow-right ml-2"></i>
+      </button>
+    </div>
+  </div>
+
+  <script>
+    // Toggle animation for pricing buttons
+    document.getElementById('monthly').addEventListener('click', function() {
+      document.getElementById('monthly').classList.add('active');
+      document.getElementById('yearly').classList.remove('active');
+    });
+    
+    document.getElementById('yearly').addEventListener('click', function() {
+      document.getElementById('yearly').classList.add('active');
+      document.getElementById('monthly').classList.remove('active');
+    });
+    
+    // Add hover effects to plan cards
+    const cards = document.querySelectorAll('.plan-card');
+    cards.forEach(card => {
+      card.addEventListener('mouseenter', () => {
+        card.classList.add('glow');
+        card.classList.add('border-blue-400/50');
+      });
+      
+      card.addEventListener('mouseleave', () => {
+        card.classList.remove('glow');
+        card.classList.remove('border-blue-400/50');
+      });
+    });
+    
+    // Animation for Get Started buttons
+    const buttons = document.querySelectorAll('button');
+    buttons.forEach(button => {
+      button.addEventListener('mouseenter', () => {
+        button.classList.add('transform', 'scale-105');
+      });
+      
+      button.addEventListener('mouseleave', () => {
+        button.classList.remove('transform', 'scale-105');
+      });
+    });
+  </script>
+
+
+{% endblock content %}

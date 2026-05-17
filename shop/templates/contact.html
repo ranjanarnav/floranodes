@@ -1,0 +1,153 @@
+{% extends "layouts/master.html" %}
+{% load static %}
+{% block content %}
+
+<!-- HERO SECTION -->
+<section class="relative overflow-hidden py-28 ">
+  <div class="absolute inset-0 opacity-40 "></div>
+
+  <div class="relative z-10 text-center max-w-4xl mx-auto px-6">
+    <div class="inline-block bg-primary/10 border border-primary/20 rounded-full px-6 py-2 mb-6">
+      <span class="text-primary font-semibold">CONTACT US</span>
+    </div>
+
+    <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-6">
+      <span class="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+        Get in Touch
+      </span>
+    </h1>
+
+    <p class="text-xl text-gray-300">We’re here to help — reach out anytime.</p>
+  </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section class="py-20 px-6" style="margin-top:-90px; position: relative; z-index: 10;">
+  <div class="max-w-6xl mx-auto">
+    <div class=" border border-purple-600/20 rounded-2xl p-10 md:p-14 ">
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+
+        <!-- CONTACT OPTIONS -->
+        <div class="space-y-10 text-gray-300">
+
+          <!-- WhatsApp -->
+          <div class="flex items-start gap-4">
+            <div class="icon-box">
+              <i class="fab fa-whatsapp text-green-400 text-2xl"></i>
+            </div>
+            <div>
+              <h3 class="text-white font-semibold text-lg">WhatsApp</h3>
+              <p class="text-gray-400 leading-relaxed">
+                +91 8011338177 <br>
+                <span class="text-sm">(Active: 9:00 AM - 9:00 PM IST)</span><br>
+                <span class="text-xs text-green-400">WhatsApp only</span>
+              </p>
+            </div>
+          </div>
+
+          <!-- Discord -->
+          <div class="flex items-start gap-4">
+            <div class="icon-box">
+              <i class="fab fa-discord text-primary text-2xl"></i>
+            </div>
+            <div>
+              <h3 class="text-white font-semibold text-lg">Discord</h3>
+              <a href="https://discord.gg/nUDqeUj5Gt" target="_blank" class="text-primary hover:underline">
+                Join our Discord Server →
+              </a>
+            </div>
+          </div>
+
+          <!-- Email -->
+          <div class="flex items-start gap-4">
+            <div class="icon-box">
+              <i class="fas fa-envelope text-primary text-xl"></i>
+            </div>
+            <div>
+              <h3 class="text-white font-semibold text-lg">Support Email</h3>
+              <a href="mailto:support@ryin.cloud" class="text-primary hover:underline">supprt@floranodes.cloud</a>
+            </div>
+          </div>
+
+          <!-- Address -->
+          <div class="flex items-start gap-4">
+            <div class="icon-box">
+              <i class="fas fa-map-marker-alt text-primary text-xl"></i>
+            </div>
+            <div>
+              <h3 class="text-white font-semibold text-lg">Address</h3>
+              <p class="text-gray-400 leading-relaxed">
+                FloraNodes <br>
+                OPP. Netaji Road ,<br>
+                 Alipurduar, <br>
+                 WestBengal <br>
+                 India <br>
+                 736121 <br>
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- CONTACT FORM -->
+        <form method="post" class="space-y-6">
+          {% csrf_token %}
+
+          <div>
+            <label class="text-gray-300 text-sm mb-2 block">Name</label>
+            <input type="text" name="name" required
+                   class="form-field">
+          </div>
+
+          <div>
+            <label class="text-gray-300 text-sm mb-2 block">Email</label>
+            <input type="email" name="email" required
+                   class="form-field">
+          </div>
+
+          <div>
+            <label class="text-gray-300 text-sm mb-2 block">Message</label>
+            <textarea name="message" rows="5" required
+                      class="form-field resize-none"></textarea>
+          </div>
+
+          <button type="submit"
+            class="w-full py-3 bg-primary hover:bg-primary/80 text-white rounded-lg font-semibold transition">
+            Send Message
+          </button>
+        </form>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  .icon-box {
+    padding: 14px;
+    background: rgba(140, 0, 255, 0.12);
+    border: 1px solid rgba(140, 0, 255, 0.35);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+  }
+
+  .form-field {
+    width: 100%;
+    padding: 14px;
+    background: #0d0018;
+    border: 1px solid #3a0b5a;
+    border-radius: 10px;
+    outline: none;
+    color: #e3d5ff;
+    transition: 0.2s;
+  }
+
+  .form-field:focus {
+    border-color: #b455ff;
+    box-shadow: 0 0 8px #b455ff;
+  }
+</style>
+
+{% endblock content %}

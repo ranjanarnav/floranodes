@@ -1,0 +1,134 @@
+{% extends "layouts/master.html" %}
+{% load static %}
+{% block content %}
+
+<!-- Hero Section - Privacy Policy -->
+<section class="hero-pattern relative overflow-hidden">
+  <div class="absolute inset-0 z-0">
+    <div class="absolute top-0 left-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxjaXJjbGUgY3g9IjEwIiBjeT0iMTAiIHI9IjAuNSIgZmlsbD0icmdiYSg1OSwgMTMwLCAyNDYsIDAuMSkiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjcGF0dGVybikiLz48L3N2Zz4=')]"></div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28 relative z-10 text-center fade-in">
+    <div class="bg-primary/10 border border-primary/20 rounded-lg px-6 py-2 w-fit mx-auto mb-6 shadow-md">
+      <span class="text-primary font-medium"><i class="fas fa-user-shield mr-2"></i> PRIVACY POLICY</span>
+    </div>
+
+    <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-4">
+      <span class="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+        Privacy Policy
+      </span>
+    </h1>
+
+    <p class="text-xl text-gray-300">Transparent & Secure Data Practices </p>
+  </div>
+</section>
+
+<!-- Privacy Content -->
+<section class="py-20 px-4 sm:px-6 lg:px-8 bg-darker/40">
+  <div class="max-w-5xl mx-auto">
+    <div class="bg-darker border border-purple-900/40 rounded-2xl p-10 md:p-14 shadow-[0_0_40px_rgba(155,77,255,0.12)] fade-in">
+
+      <!-- Summary Box -->
+      <div class="bg-primary/10 border border-primary/30 rounded-xl p-6 mb-12 shadow-inner">
+        <h2 class="section-title flex items-center">
+          <i class="fas fa-info-circle mr-3"></i> Summary
+        </h2>
+        <p class="section-text">
+          FloraNodes collects only the essential information needed to operate our services and protect our platform.
+        </p>
+      </div>
+
+      <div class="space-y-12 text-gray-300 leading-relaxed">
+
+        <!-- WHAT WE COLLECT -->
+        <div>
+          <h2 class="section-title">I. Information We Collect</h2>
+          <ul class="styled-list">
+            <li>Email address (for login & communication)</li>
+            <li>IP address (security, anti-DDoS & abuse prevention)</li>
+            <li>Payment reference IDs (we never store card data)</li>
+            <li>Server performance & usage data (CPU, RAM, logs, player count)</li>
+          </ul>
+        </div>
+
+        <!-- WHAT WE DON'T COLLECT -->
+        <div>
+          <h2 class="section-title">II. What We Do NOT Collect</h2>
+          <ul class="styled-list">
+            <li>No card numbers or sensitive banking details</li>
+            <li>No government ID documents</li>
+            <li>No GPS or device location tracking</li>
+          </ul>
+        </div>
+
+        <!-- HOW WE USE IT -->
+        <div>
+          <h2 class="section-title">III. How Your Data Is Used</h2>
+          <ul class="styled-list">
+            <li>To manage & maintain your hosting services</li>
+            <li>To detect fraud, abuse, or Terms violations</li>
+            <li>For critical communication (billing issues, service alerts, outages)</li>
+          </ul>
+        </div>
+
+        <!-- DATA SHARING -->
+        <div>
+          <h2 class="section-title">IV. Sharing of Data</h2>
+          <p class="section-text">
+            FloraNodes does <strong>not</strong> sell or trade your information.  
+            We only share data with:
+          </p>
+
+          <ul class="styled-list mt-3">
+            <li>Payment processors (for verification only)</li>
+            <li>Legal authorities (only if required by law)</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- RETURN HOME -->
+      <div class="mt-16 pt-10 border-t border-purple-800/40 text-center">
+        <a href="/" class="px-8 py-3 bg-primary/20 hover:bg-primary/30 border border-primary/50 rounded-lg">
+          ← Back to Homepage
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Custom Styling -->
+<style>
+  .section-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #b57aff;
+    margin-bottom: 0.8rem;
+  }
+  .section-text {
+    font-size: 1.05rem;
+    color: #d3c8ff;
+  }
+  .styled-list {
+    margin-left: 1.5rem;
+    padding-left: 0.5rem;
+    list-style: none;
+  }
+  .styled-list li {
+    position: relative;
+    padding-left: 1.4rem;
+    margin-bottom: 0.6rem;
+    font-size: 1.05rem;
+  }
+  .styled-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    top: 2px;
+    color: #b57aff;
+    font-size: 1.4rem;
+  }
+</style>
+
+{% endblock content %}

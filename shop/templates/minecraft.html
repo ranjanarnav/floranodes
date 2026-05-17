@@ -1,0 +1,333 @@
+{% extends "layouts/master.html" %}
+{% load static %}
+{% block content %}
+
+<!-- HERO SECTION -->
+<section class="relative w-screen h-[60vh] min-h-[420px] overflow-hidden">
+
+  <div class="relative z-10 flex items-center justify-center h-full text-center px-6" style="margin-left:-350px;">
+    <div>
+      <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-4 tracking-tight">
+        Hosting Plans
+      </h1>
+      <p class="text-xl text-gray-300 max-w-2xl mx-auto">
+        Choose from Intel, Premium and Enterprise Nodes
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- FILTER + PLANS -->
+<section 
+  class="px-6 md:px-12 lg:px-20 my-20"
+  style="margin-top:-100px; position: relative; z-index: 10;"
+  x-data="{ filter: 'intel' }">
+
+  <div class="max-w-7xl mx-auto">
+
+    <!-- FILTER BAR -->
+    <div class="flex justify-center mb-16">
+      <div class="flex overflow-hidden border border-purple-400/30 bg-purple-500/10 backdrop-blur-md w-[800px] h-[75px] rounded-[10px]">
+
+        <button @click="filter='intel'"
+          :class="filter==='intel' ? 'bg-purple-500 text-black shadow-lg' : 'text-purple-300 hover:bg-purple-500/20'"
+          class="flex-1 flex items-center justify-center font-semibold uppercase transition-all">
+          INTEL
+        </button>
+
+        <button @click="filter='premium'"
+          :class="filter==='premium' ? 'bg-purple-500 text-black shadow-lg' : 'text-purple-300 hover:bg-purple-500/20'"
+          class="flex-1 flex items-center justify-center font-semibold uppercase transition-all">
+          PREMIUM
+        </button>
+
+        <button @click="filter='enterprise'"
+          :class="filter==='enterprise' ? 'bg-purple-500 text-black shadow-lg' : 'text-purple-300 hover:bg-purple-500/20'"
+          class="flex-1 flex items-center justify-center font-semibold uppercase transition-all">
+          ENTERPRISE
+        </button>
+
+      </div>
+    </div>
+
+    <!-- INTEL PLANS -->
+    <template x-if="filter==='intel'">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+
+        {% comment %} 1GB INTEL {% endcomment %}
+        <div class="plan-card">
+          <h3 class="plan-title">Intel 1GB</h3>
+          <div class="plan-price">₹60/mo</div>
+          <ul class="plan-list">
+            <li>1GB RAM</li>
+            <li>100% CPU</li>
+            <li>10GB SSD</li>
+          </ul>
+          <a href="/mc-intel" class="plan-btn">Browse</a>
+        </div>
+
+        {% comment %} 2GB INTEL {% endcomment %}
+        <div class="plan-card">
+          <h3 class="plan-title">Intel 2GB</h3>
+          <div class="plan-price">₹120/mo</div>
+          <ul class="plan-list">
+            <li>2GB RAM</li>
+            <li>200% CPU</li>
+            <li>20GB SSD</li>
+          </ul>
+          <a href="/mc-intel" class="plan-btn">Browse</a>
+        </div>
+
+        {% comment %} 4GB INTEL {% endcomment %}
+        <div class="plan-card">
+          <h3 class="plan-title">Intel 4GB</h3>
+          <div class="plan-price">₹240/mo</div>
+          <ul class="plan-list">
+            <li>4GB RAM</li>
+            <li>300% CPU</li>
+            <li>40GB SSD</li>
+          </ul>
+          <a href="/mc-intel" class="plan-btn">Browse</a>
+        </div>
+
+      </div>
+    </template>
+
+    <!-- PREMIUM PLANS -->
+    <template x-if="filter==='premium'">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+
+        <div class="plan-card">
+          <h3 class="plan-title">Premium 1GB</h3>
+          <div class="plan-price">₹75/mo</div>
+          <ul class="plan-list">
+            <li>1GB RAM</li>
+            <li>100% CPU</li>
+            <li>10GB SSD</li>
+          </ul>
+          <a href="/mc-premium" class="plan-btn">Browse</a>
+        </div>
+
+        <div class="plan-card">
+          <h3 class="plan-title">Premium 2GB</h3>
+          <div class="plan-price">₹150/mo</div>
+          <ul class="plan-list">
+            <li>2GB RAM</li>
+            <li>200% CPU</li>
+            <li>20GB SSD</li>
+          </ul>
+          <a href="/mc-premium" class="plan-btn">Browse</a>
+        </div>
+
+        <div class="plan-card">
+          <h3 class="plan-title">Premium 4GB</h3>
+          <div class="plan-price">₹300/mo</div>
+          <ul class="plan-list">
+            <li>4GB RAM</li>
+            <li>300% CPU</li>
+            <li>40GB SSD</li>
+          </ul>
+          <a href="/mc-premium" class="plan-btn">Browse</a>
+        </div>
+
+      </div>
+    </template>
+
+    <!-- ENTERPRISE PLANS -->
+    <template x-if="filter==='enterprise'">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+
+        <div class="plan-card">
+          <h3 class="plan-title">Enterprise 1GB</h3>
+          <div class="plan-price">₹120/mo</div>
+          <ul class="plan-list">
+            <li>1GB RAM</li>
+            <li>100% CPU</li>
+            <li>10GB SSD</li>
+          </ul>
+          <a href="/mc-enterprise" class="plan-btn">Browse</a>
+        </div>
+
+        <div class="plan-card">
+          <h3 class="plan-title">Enterprise 2GB</h3>
+          <div class="plan-price">₹240/mo</div>
+          <ul class="plan-list">
+            <li>2GB RAM</li>
+            <li>200% CPU</li>
+            <li>20GB SSD</li>
+          </ul>
+          <a href="/mc-enterprise" class="plan-btn">Browse</a>
+        </div>
+
+        <div class="plan-card">
+          <h3 class="plan-title">Enterprise 4GB</h3>
+          <div class="plan-price">₹480/mo</div>
+          <ul class="plan-list">
+            <li>4GB RAM</li>
+            <li>300% CPU</li>
+            <li>40GB SSD</li>
+          </ul>
+          <a href="/mc-enterprise" class="plan-btn">Browse</a>
+        </div>
+
+      </div>
+    </template>
+
+  </div>
+</section>
+
+<section class="py-20 border-t border-purple-600/20">
+  <div class="max-w-4xl mx-auto text-center mb-12">
+    <h2 class="text-4xl font-bold mb-4">Price Calculator</h2>
+    <p class="text-gray-400">Instant server cost estimation</p>
+  </div>
+
+  <div x-data="{
+        ram: 1,
+        cpu: 1,
+        disk: 10,
+        type: 'intel',
+        price() {
+          let p = {
+            intel:      { ram:40, disk:10, cpu:30 },
+            premium:    { ram:50, disk:35, cpu:45 },
+            enterprise: { ram:60, disk:50, cpu:60 }
+          };
+          return (this.ram * p[this.type].ram)
+               + ((this.disk / 10) * p[this.type].disk)
+               + (this.cpu * p[this.type].cpu);
+        }
+      }" 
+      class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+
+    <!-- LEFT SIDE SLIDERS -->
+    <div class="glass-box p-10">
+
+      <!-- PLAN TYPE -->
+      <div class="flex justify-center mb-10">
+        <button @click="type='intel'" :class="type==='intel' ? 'calc-btn-active' : 'calc-btn'">Intel</button>
+        <button @click="type='premium'" :class="type==='premium' ? 'calc-btn-active' : 'calc-btn'">Premium</button>
+        <button @click="type='enterprise'" :class="type==='enterprise' ? 'calc-btn-active' : 'calc-btn'">Enterprise</button>
+      </div>
+
+      <!-- RAM -->
+      <div class="calc-row">
+        <label>RAM (GB)</label>
+        <input type="range" min="1" max="32" x-model="ram" class="slider">
+        <div class="calc-value" x-text="ram + ' GB'"></div>
+      </div>
+
+      <!-- CPU -->
+      <div class="calc-row">
+        <label>CPU (%)</label>
+        <input type="range" min="1" max="16" x-model="cpu" class="slider">
+        <div class="calc-value" x-text="(cpu * 100) + '%'"></div>
+      </div>
+
+      <!-- DISK -->
+      <div class="calc-row">
+        <label>Disk (GB)</label>
+        <input type="range" min="10" max="200" step="10" x-model="disk" class="slider">
+        <div class="calc-value" x-text="disk + ' GB'"></div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT SIDE SUMMARY CARD -->
+    <div class="glass-box p-10 flex flex-col justify-center">
+
+      <h3 class="text-3xl font-bold mb-6 text-purple-300 text-center">Summary</h3>
+
+      <div class="summary-row"><span>Plan</span> <span x-text="type.toUpperCase()"></span></div>
+      <div class="summary-row"><span>RAM</span> <span x-text="ram + ' GB'"></span></div>
+      <div class="summary-row"><span>CPU</span> <span x-text="cpu * 100 + '%'"></span></div>
+      <div class="summary-row"><span>Disk</span> <span x-text="disk + ' GB'"></span></div>
+
+      <hr class="my-4 border-purple-400/30">
+
+      <h3 class="text-4xl font-bold text-purple-400 text-center">
+        ₹ <span x-text="price()"></span>
+        <span class="text-lg text-gray-300">/ month</span>
+      </h3>
+
+    </div>
+  </div>
+</section>
+
+<style>
+
+  .glass-box {
+    background: rgba(155,77,255,0.08);
+    border: 1px solid rgba(155,77,255,0.3);
+    border-radius: 18px;
+    backdrop-filter: blur(12px);
+  }
+
+  .calc-row {
+    margin-bottom: 30px;
+  }
+  .calc-row label {
+    color: white;
+    font-weight: 600;
+    margin-bottom: 10px;
+    display:block;
+  }
+
+  .slider {
+    width:100%;
+    appearance:none;
+    height:10px;
+    border-radius:5px;
+    background:#2a003e;
+  }
+  .slider::-webkit-slider-thumb {
+    appearance:none;
+    height:22px;
+    width:22px;
+    background:#b57aff;
+    border-radius:50%;
+    cursor:pointer;
+    box-shadow:0 0 12px #b57aff;
+  }
+
+  .calc-value {
+    text-align:right;
+    color:#c084fc;
+    font-size:15px;
+    margin-top:6px;
+  }
+
+  .calc-btn {
+    padding:12px 24px;
+    border:1px solid #6b21a8;
+    margin:0 6px;
+    border-radius:10px;
+    color:#d8b4fe;
+    font-weight:600;
+    transition:0.2s;
+  }
+  .calc-btn-active {
+    padding:12px 24px;
+    margin:0 6px;
+    border-radius:10px;
+    background:#9b4dff;
+    color:white;
+    font-weight:700;
+    box-shadow:0 0 15px #9b4dff;
+  }
+
+  .summary-row {
+    display:flex;
+    justify-content:space-between;
+    color:white;
+    font-size:18px;
+    margin-bottom:12px;
+  }
+
+</style>
+
+
+<script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+{% endblock content %}
+
+  

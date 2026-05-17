@@ -1,0 +1,124 @@
+{% extends "layouts/master.html" %}
+{% load static %}
+{% block content %}
+
+<!-- Hero Section - Usage Policy -->
+<section class="hero-pattern relative overflow-hidden">
+  <div class="absolute inset-0 z-0">
+    <div class="absolute top-0 left-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxjaXJjbGUgY3g9IjEwIiBjeT0iMTAiIHI9IjAuNSIgZmlsbD0icmdiYSg1OSwgMTMwLCAyNDYsIDAuMSkiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjcGF0dGVybikiLz48L3N2Zz4=')]"></div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28 relative z-10 text-center fade-in">
+    <div class="bg-primary/10 border border-primary/20 rounded-lg px-6 py-2 w-fit mx-auto mb-6 shadow-md">
+      <span class="text-primary font-medium"><i class="fas fa-user-shield mr-2"></i> USAGE POLICY</span>
+    </div>
+
+    <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-4">
+      <span class="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+        Usage Policy
+      </span>
+    </h1>
+
+    <p class="text-xl text-gray-300">What you can and cannot host</p>
+  </div>
+</section>
+
+<!-- Usage Policy Content -->
+<section class="py-20 px-4 sm:px-6 lg:px-8 bg-darker/40">
+  <div class="max-w-5xl mx-auto">
+    <div class="bg-darker border border-purple-900/40 rounded-2xl p-10 md:p-14 shadow-[0_0_40px_rgba(155,77,255,0.12)] fade-in">
+
+      <!-- Forbidden Usage Box -->
+      <div class="bg-red-900/25 border border-red-700/60 rounded-xl p-6 mb-12 shadow-[0_0_20px_rgba(255,0,0,0.2)]">
+        <h2 class="text-3xl font-bold text-red-400 mb-3 flex items-center">
+          <i class="fas fa-ban mr-3"></i> Forbidden Usage
+        </h2>
+        <p class="text-gray-300 text-lg">
+          Engaging in any of the following activities will result in <strong>instant service termination</strong>
+          and may lead to a permanent ban.
+        </p>
+      </div>
+
+      <div class="space-y-12 text-gray-300 leading-relaxed">
+
+        <!-- Illegal Activities -->
+        <div>
+          <h2 class="section-title">I. Illegal Activities</h2>
+          <ul class="styled-list">
+            <li>No hosting pirated / cracked software or copyrighted content.</li>
+            <li>No viruses, malware, trojans, backdoors, keyloggers or harmful payloads.</li>
+          </ul>
+        </div>
+
+        <!-- Resource Abuse -->
+        <div>
+          <h2 class="section-title">II. Resource Abuse</h2>
+          <ul class="styled-list">
+            <li>No crypto mining (Bitcoin, Monero, etc.).</li>
+            <li>No CPU stress testing, attack scripts or benchmarks designed to overload nodes.</li>
+            <li>No editing system binaries to bypass assigned limits.</li>
+          </ul>
+        </div>
+
+        <!-- Network Abuse -->
+        <div>
+          <h2 class="section-title">III. Network Abuse</h2>
+          <ul class="styled-list">
+            <li>No DDoS tools, packet flooders or botnet control panels.</li>
+            <li>No port scanning, VPN hosting, tunneling or proxy services.</li>
+            <li>No IP masking tools or anonymizer networks.</li>
+          </ul>
+        </div>
+
+        <!-- Allowed Usage -->
+        <div>
+          <h2 class="section-title">IV. Allowed Usage</h2>
+          <ul class="styled-list">
+            <li>Minecraft servers (Java, Bedrock, modded)</li>
+            <li>Game servers that are allowed on your plan tier</li>
+            <li>Websites, Discord bots, small apps (if allowed on plan)</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="mt-16 pt-10 border-t border-purple-800/40 text-center">
+        <a href="/" class="px-8 py-3 bg-primary/20 hover:bg-primary/30 border border-primary/50 rounded-lg">
+          ← Back to Homepage
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Premium Styles -->
+<style>
+  .section-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #b57aff;
+    margin-bottom: 0.8rem;
+  }
+  .styled-list {
+    list-style: none;
+    margin-left: 1.5rem;
+    padding-left: 0.5rem;
+  }
+  .styled-list li {
+    position: relative;
+    padding-left: 1.4rem;
+    margin-bottom: 0.6rem;
+    font-size: 1.05rem;
+  }
+  .styled-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    top: 2px;
+    font-size: 1.4rem;
+    color: #b57aff;
+  }
+</style>
+
+{% endblock content %}

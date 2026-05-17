@@ -1,0 +1,734 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>FloraNodes | Premium Minecraft Hosting</title>
+
+  <meta property="og:title" content="FloraNodes — Premium Minecraft Hosting" />
+  <meta property="og:description"
+    content="Ultra-fast Minecraft hosting with NVMe SSD, advanced DDoS protection, global nodes & automated setup." />
+  <meta property="og:image" content="{% static 'images/floranodes-banner.png' %}" />
+  <meta property="og:url" content="https://floranodes.com/" />
+  <meta property="og:type" content="website" />
+
+  <meta name="description"
+    content="FloraNodes — a premium, modern and fully-automated Minecraft hosting platform built for speed, reliability and performance." />
+
+  <link rel="icon" href="{% static 'images/logo.png' %}" type="image/png" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'dark': '#11001f',
+            'darker': '#0A0013',
+            'primary': '#9b4dff',
+            'primary-light': '#b57aff',
+            'primary-dark': '#7127d8',
+            'accent': '#ff8bff',
+          },
+          animation: {
+            'float': 'float 5s ease-in-out infinite',
+            'glow': 'glow 3s ease-in-out infinite',
+            'fade': 'fade 1s ease-in-out forwards',
+          },
+          keyframes: {
+            float: {
+              '0%,100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-10px)' },
+            },
+            glow: {
+              '0%': { filter: 'drop-shadow(0 0 5px #9b4dff)' },
+              '50%': { filter: 'drop-shadow(0 0 15px #b57aff)' },
+              '100%': { filter: 'drop-shadow(0 0 5px #9b4dff)' },
+            },
+            fade: {
+              '0%': { opacity: 0 },
+              '100%': { opacity: 1 },
+            },
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: radial-gradient(circle at top, #1a0033, #0a0013 70%);
+      color: #e7d9ff;
+      overflow-x: hidden;
+    }
+
+    /* TRANSPARENT SCROLLBAR RESTORE */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: transparent !important;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: rgba(181, 122, 255, 0.8);
+      border-radius: 10px;
+      border: 2px solid transparent;
+      background-clip: padding-box;
+      height: 200px !important;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(181, 122, 255, 0.8);
+    }
+
+    #logo-marquee {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      padding: 2rem 0;
+    }
+
+    #logo-marquee .marquee-track {
+      display: flex;
+      gap: 10rem;
+      /* space between logos */
+      animation: marquee 20s linear infinite;
+      white-space: nowrap;
+    }
+
+    #logo-marquee img {
+      height: 60px;
+      opacity: 0.3;
+      transition: all 0.3s ease;
+    }
+
+    #logo-marquee img:hover {
+      opacity: 1;
+      transform: scale(1.1);
+    }
+
+    @keyframes marquee {
+      0% {
+        transform: translateX(0%);
+      }
+
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    #logo-marquee img {
+      filter: brightness(0) invert(1);
+      opacity: 0.9;
+      transition: opacity 0.3s ease;
+    }
+
+    #logo-marquee img:hover {
+      opacity: 1;
+    }
+
+    .nav-link:hover {
+      color: #b57aff;
+    }
+
+    #page-loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #0a0013;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 99999;
+      transition: opacity 0.4s ease;
+    }
+
+    .loader {
+      width: 60px;
+      height: 60px;
+      border: 6px solid rgba(255, 255, 255, 0.1);
+      border-top-color: #9b4dff;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* HERO SECTION RESTORE */
+    .hero-pattern {
+      background: radial-gradient(circle at center, rgba(155, 77, 255, 0.10) 0%, transparent 70%);
+    }
+
+    .gradient-bg {
+      background: linear-gradient(135deg,
+          rgba(155, 77, 255, 0.15),
+          rgba(155, 77, 255, 0.05));
+    }
+
+    .hero-content {
+      padding-top: 8rem;
+      padding-bottom: 6rem;
+    }
+
+    .hero-text {
+      color: #e7d9ff;
+      line-height: 1.4;
+    }
+
+    /* HERO BUTTONS */
+    .hero-btn-primary {
+      background: #9b4dff;
+      color: white;
+      padding: 0.9rem 2rem;
+      border-radius: 10px;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .hero-btn-primary:hover {
+      background: #b57aff;
+    }
+
+    .hero-btn-secondary {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      padding: 0.9rem 2rem;
+      border-radius: 10px;
+      font-weight: 600;
+      color: #e7d9ff;
+      transition: 0.3s;
+    }
+
+    .hero-btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.10);
+    }
+
+    /* HERO FEATURE CARDS RESTORED */
+    .feature-card {
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(8px);
+      padding: 1.5rem;
+      border-radius: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 20px rgba(155, 77, 255, 0.08);
+    }
+
+    .feature-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 28px rgba(155, 77, 255, 0.25);
+    }
+
+    .feature-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 12px;
+      background: linear-gradient(135deg,
+          rgba(155, 77, 255, 0.25),
+          rgba(155, 77, 255, 0.08));
+      border: 1px solid rgba(155, 77, 255, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: 0.3s;
+    }
+
+    .feature-card:hover .feature-icon {
+      background: linear-gradient(135deg,
+          rgba(155, 77, 255, 0.4),
+          rgba(155, 77, 255, 0.15));
+      transform: translateY(-4px);
+    }
+
+    /* HERO SUBTEXT */
+    .hero-subtext {
+      font-size: 1.1rem;
+      color: #d6c8ff;
+      max-width: 600px;
+      margin-top: 1rem;
+    }
+
+    /* RESPONSIVE RESTORE */
+    @media (max-width: 768px) {
+      .hero-content {
+        padding-top: 5rem;
+        padding-bottom: 3rem;
+      }
+
+      .hero-text {
+        text-align: center;
+      }
+    }
+  </style>
+
+  {% block head %}{% endblock %}
+</head>
+
+<body class="relative">
+
+  <!-- PAGE LOADER -->
+  <div id="page-loader">
+    <div class="loader"></div>
+  </div>
+
+  <!-- GLASS SIDEBAR -->
+<!-- GLASS SIDEBAR -->
+<aside class="fixed top-6 left-6 w-64 rounded-2xl bg-[#0a0013]/70 backdrop-blur-2xl
+border border-purple-600/20 shadow-[0_0_35px_rgba(155,77,255,0.25)]
+p-5 z-40 hidden md:block">
+
+  <!-- BRAND -->
+  <div class="flex items-center gap-3 mb-8">
+    <img src="{% static 'images/logo.png' %}" class="w-14 h-14 animate-glow" />
+    <div>
+      <h2 class="text-xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+        FloraNodes
+      </h2>
+      <p class="text-xs text-gray-400 mt-0.5">Premium Hosting</p>
+    </div>
+  </div>
+
+  <!-- NAVIGATION -->
+  <nav class="flex flex-col gap-2 text-gray-200 font-medium">
+
+    <!-- HOME -->
+    <a href="/" class="sidebar-item">
+      <i class="fa-solid fa-house w-5"></i> Home
+    </a>
+
+    <!-- SERVICES -->
+    <details class="group sidebar-dropdown">
+      <summary class="sidebar-item cursor-pointer">
+        <i class="fa-solid fa-server w-5"></i> Services
+        <i class="fa-solid fa-chevron-down ml-auto text-sm transition-transform duration-300 group-open:rotate-180"></i>
+      </summary>
+
+      <div class="dropdown-content">
+        <a href="/mc-plan" class="dropdown-link">Minecraft Hosting</a>
+        <a href="/vps" class="dropdown-link">VPS Hosting</a>
+      </div>
+    </details>
+
+    <!-- ABOUT -->
+    <a href="{% url 'about' %}" class="sidebar-item">
+      <i class="fa-solid fa-circle-info w-5"></i> About
+    </a>
+
+    <!-- LEGAL -->
+    <details class="group sidebar-dropdown">
+      <summary class="sidebar-item cursor-pointer">
+        <i class="fa-solid fa-scale-balanced w-5 text-primary"></i> Legal
+        <i class="fa-solid fa-chevron-down ml-auto text-sm transition-transform duration-300 group-open:rotate-180"></i>
+      </summary>
+
+      <div class="dropdown-content">
+        <a href="/privacy/" class="dropdown-link">Privacy Policy</a>
+        <a href="/refund/" class="dropdown-link">Refund Policy</a>
+        <a href="/usage/" class="dropdown-link">Acceptable Usage</a>
+        <a href="/tos/" class="dropdown-link">Terms of Service</a>
+      </div>
+    </details>
+
+    <!-- CONTACT -->
+    <a href="{% url 'contact' %}" class="sidebar-item">
+      <i class="fa-solid fa-envelope w-5"></i> Contact
+    </a>
+
+    <hr class="border-white/10 my-3">
+
+    <!-- CLIENT AREA -->
+    <a href="/billing" class="sidebar-item bg-primary/20 hover:bg-primary/30">
+      <i class="fa-solid fa-user w-5"></i> Client Area
+    </a>
+
+    <!-- PANEL -->
+    <a href="https://panel.floranodes.com"
+       class="sidebar-item border border-white/20 hover:bg-white/10">
+      <i class="fa-solid fa-table-list w-5"></i> Game Panel
+    </a>
+
+  </nav>
+</aside>
+
+
+<!-- SIDEBAR STYLES -->
+<style>
+  /* Sidebar item */
+  .sidebar-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.75rem 1rem;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    transition: 0.2s;
+  }
+
+  .sidebar-item:hover {
+    background: rgba(255,255,255,0.08);
+    color: #fff;
+  }
+
+  /* Dropdown container */
+  .sidebar-dropdown[open] > summary {
+    background: rgba(255,255,255,0.08);
+  }
+
+  .sidebar-dropdown summary::-webkit-details-marker {
+    display: none;
+  }
+
+  /* Dropdown inner links */
+  .dropdown-content {
+    margin-left: 2.5rem;
+    margin-top: 0.4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .dropdown-link {
+    padding: 0.45rem 0.7rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    color: #d8cfff;
+    transition: 0.15s;
+  }
+
+  .dropdown-link:hover {
+    background: rgba(255,255,255,0.07);
+    color: #fff;
+  }
+
+  /* Glow animation for logo */
+  .animate-glow {
+    animation: glow 3s infinite alternate;
+  }
+
+  @keyframes glow {
+    0% { filter: drop-shadow(0 0 2px #9b4dff); }
+    100% { filter: drop-shadow(0 0 10px #b57aff); }
+  }
+</style>
+
+  <!-- MOBILE MENU SIDEBAR -->
+  <div id="mobile-menu"
+    class="fixed top-0 left-0 h-full w-64 bg-black/80 backdrop-blur-xl border-r border-white/10 transform -translate-x-full transition-transform duration-300 z-50">
+
+    <div class="px-6 py-6 flex flex-col gap-4 text-gray-200">
+
+      <a href="/" class="nav-link">Home</a>
+      <a href="/mc" class="nav-link">Minecraft Hosting</a>
+      <a href="/vps" class="nav-link">VPS Hosting</a>
+
+      <a href="{% url 'about' %}" class="nav-link">About Us</a>
+      <a href="{% url 'contact' %}" class="nav-link">Contact</a>
+
+      <hr class="border-white/10">
+
+      <a href="/billing" class="block bg-primary/20 hover:bg-primary/30 py-2 text-center rounded-lg">
+        Client Area
+      </a>
+
+      <a href="https://panel.floranodes.com"
+        class="block border border-white/20 hover:bg-white/10 py-2 text-center rounded-lg">
+        Game Panel
+      </a>
+
+    </div>
+  </div>
+
+
+  <div class="md:ml-72 ml-0 px-4">
+    {% block content %}{% endblock %}
+  </div>
+
+
+  <!-- FOOTER -->
+  <footer class="bg-darker border-t border-white/10 pt-16 pb-10 px-6 mt-20 md:ml-72 ml-0 px-4">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+
+      <!-- BRAND -->
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <img src="{% static 'images/logo.png' %}" class="w-10 h-10 animate-glow" />
+
+          <span class="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+            FloraNodes
+          </span>
+        </div>
+        <p class="text-gray-400 text-sm leading-relaxed">
+          A next-gen, fully-automated Minecraft hosting platform built for performance, reliability and global scale.
+        </p>
+      </div>
+
+      <!-- SERVICES -->
+      <div>
+        <h4 class="text-lg font-semibold mb-4 text-primary-light">Hosting</h4>
+        <ul class="space-y-3">
+          <li><a href="/mc" class="hover:text-primary-light transition">Minecraft Hosting</a></li>
+          <li><a href="/vps" class="hover:text-primary-light transition">VPS Hosting</a></li>
+        </ul>
+      </div>
+
+      <!-- COMPANY -->
+      <div>
+        <h4 class="text-lg font-semibold mb-4 text-primary-light">Company</h4>
+        <ul class="space-y-3">
+          <li><a href="{% url 'about' %}" class="hover:text-primary-light transition">About Us</a></li>
+          <li><a href="{% url 'contact' %}" class="hover:text-primary-light transition">Contact</a></li>
+          <li><a href="/docs" class="hover:text-primary-light transition">Documentation</a></li>
+        </ul>
+      </div>
+
+      <!-- LEGAL -->
+      <div>
+        <h4 class="text-lg font-semibold mb-4 text-primary-light">Legal</h4>
+        <ul class="space-y-3 mb-6">
+          <li><a href="{% url 'tos' %}" class="hover:text-primary-light transition">Terms of Service</a></li>
+          <li><a href="{% url 'privacy' %}" class="hover:text-primary-light transition">Privacy Policy</a></li>
+          <li><a href="{% url 'refund' %}" class="hover:text-primary-light transition">Refund Policy</a></li>
+        </ul>
+
+        <!-- SOCIAL -->
+        <div class="flex items-center gap-4">
+
+          <a href="https://discord.gg/YcBgdDMJBx"
+            class="w-10 h-10 flex items-center justify-center rounded-lg bg-white/5 hover:bg-primary/20 transition">
+            <i class="fab fa-discord text-primary"></i>
+          </a>
+
+          <a href="https://status.floranodes.com"
+            class="w-10 h-10 flex items-center justify-center rounded-lg bg-white/5 hover:bg-primary/20 transition">
+            <i class="fa-solid fa-signal text-primary"></i>
+          </a>
+
+          <a href="/billing"
+            class="w-10 h-10 flex items-center justify-center rounded-lg bg-white/5 hover:bg-primary/20 transition">
+            <i class="fa-solid fa-user text-primary"></i>
+          </a>
+
+        </div>
+      </div>
+
+    </div>
+
+    <div class="border-t border-white/10 mt-12 pt-6 text-center text-gray-500 text-sm">
+      © 2025 FloraNodes. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+
+      // =========================
+      // MOBILE MENU SIDEBAR
+      // =========================
+      const mobileBtn = document.getElementById("mobile-menu-button");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      if (mobileBtn && mobileMenu) {
+        mobileBtn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          mobileMenu.classList.toggle("-translate-x-full");
+        });
+
+        // prevent closing when clicking inside
+        mobileMenu.addEventListener("click", (e) => {
+          e.stopPropagation();
+        });
+      }
+
+      // Click outside → close mobile menu
+      document.addEventListener("click", () => {
+        if (mobileMenu && !mobileMenu.classList.contains("-translate-x-full")) {
+          mobileMenu.classList.add("-translate-x-full");
+        }
+      });
+
+
+      // =========================
+      // PORTALS DROPDOWN
+      // =========================
+      const portalsBtn = document.getElementById("portalsBtn");
+      const portalsMenu = document.getElementById("portalsMenu");
+
+      if (portalsBtn && portalsMenu) {
+        portalsBtn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          portalsMenu.classList.toggle("hidden");
+        });
+
+        portalsMenu.addEventListener("click", (e) => e.stopPropagation());
+      }
+
+      // Close dropdown on outside click
+      document.addEventListener("click", () => {
+        if (portalsMenu && !portalsMenu.classList.contains("hidden")) {
+          portalsMenu.classList.add("hidden");
+        }
+      });
+
+
+      // =========================
+      // NAVBAR: Purple Glow on Scroll
+      // =========================
+      const nav = document.getElementById("navbar");
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 50) {
+          nav.classList.add(
+            "bg-black/40",
+            "backdrop-blur-xl",
+            "border-b",
+            "border-white/10",
+            "shadow-[0_0_25px_rgba(155,77,255,0.3)]"
+          );
+        } else {
+          nav.classList.remove(
+            "bg-black/40",
+            "backdrop-blur-xl",
+            "border-b",
+            "border-white/10",
+            "shadow-[0_0_25px_rgba(155,77,255,0.3)]"
+          );
+        }
+      });
+
+
+      // =========================
+      // SMOOTH SCROLL FOR SECTION LINKS
+      // =========================
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+          const targetID = this.getAttribute("href");
+          if (targetID.length < 2) return;
+
+          const section = document.querySelector(targetID);
+          if (!section) return;
+
+          e.preventDefault();
+
+          window.scrollTo({
+            top: section.offsetTop - 80,
+            behavior: "smooth",
+          });
+
+          // close mobile menu if open
+          if (mobileMenu && !mobileMenu.classList.contains("-translate-x-full")) {
+            mobileMenu.classList.add("-translate-x-full");
+          }
+        });
+      });
+
+
+      // =========================
+      // SCROLL ANIMATIONS (fade + float)
+      // =========================
+      const animatedElements = document.querySelectorAll(".fade, .slide-up");
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("opacity-100", "translate-y-0");
+          }
+        });
+      }, { threshold: 0.15 });
+
+      animatedElements.forEach(el => {
+        el.style.opacity = 0;
+        el.style.transform = "translateY(20px)";
+        observer.observe(el);
+      });
+
+    });
+  </script>
+
+
+  <!-- =========================
+       PAGE LOADER REMOVE
+       ========================= -->
+  <script>
+    window.addEventListener("load", () => {
+      const loader = document.getElementById("page-loader");
+
+      if (!loader) return;
+
+      loader.style.opacity = "0";
+
+      setTimeout(() => {
+        loader.remove();
+      }, 400);
+
+    });
+  </script>
+
+  <!-- Purple Particle Layer -->
+  <canvas id="particle-canvas" class="pointer-events-none fixed top-0 left-0 w-full h-full opacity-20"></canvas>
+
+  <script>
+    const canvas = document.getElementById("particle-canvas");
+    const ctx = canvas.getContext("2d");
+
+    function resize() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    resize();
+    window.addEventListener("resize", resize);
+
+    let particles = Array.from({ length: 70 }, () => ({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      r: Math.random() * 2 + 1,
+      dx: (Math.random() - 0.5) * 0.5,
+      dy: (Math.random() - 0.5) * 0.5
+    }));
+
+    function draw() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = "#9b4dff";
+
+      particles.forEach(p => {
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fill();
+
+        p.x += p.dx;
+        p.y += p.dy;
+
+        if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
+        if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+      });
+
+      requestAnimationFrame(draw);
+    }
+    draw();
+    function toggleSidebarDropdown() {
+      const dropdown = document.getElementById("sidebar-dropdown");
+      dropdown.classList.toggle("hidden");
+    }
+  </script>
+
+</body>
+
+</html>

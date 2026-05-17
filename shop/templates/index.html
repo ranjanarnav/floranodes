@@ -1,0 +1,632 @@
+{% extends "layouts/master.html" %}
+{% load static %}
+{% block content %}
+
+
+<!-- Hero Section -->
+<section class="relative overflow-hidden hero-pattern" style="margin-top:-50px;">
+
+  <div class="max-w-7xl mx-auto px-6 py-28 lg:py-36 relative z-10" style="margin-top:-50px;">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-14">
+
+          <!-- LEFT CONTENT -->
+          <div class="md:w-1/2">
+
+              <!-- Tag -->
+              <div class="bg-primary/20 border border-primary/30 text-primary px-4 py-1.5 rounded-lg w-fit mb-6">
+                  <i class="fas fa-bolt mr-2"></i> PREMIUM HOSTING SOLUTIONS
+              </div>
+
+              <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6 text-white">
+                  <span class="block">Ultra-Fast</span>
+
+                  <span class="block bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                      <span id="rotating-text">Minecraft</span>
+                      <span class="animate-pulse">|</span>
+                  </span>
+
+                  <span class="block">Hosting</span>
+              </h1>
+
+              <p class="text-lg text-purple-200 max-w-xl mb-10">
+                  Experience enterprise-grade performance with NVMe SSDs, advanced DDoS protection,
+                  and ultra-low latency nodes worldwide.
+              </p>
+
+              <!-- Stats -->
+              <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+
+                  <div class="bg-white/5 border border-white/10 rounded-xl p-4 text-center backdrop-blur-md">
+                      <div class="text-2xl font-bold text-primary">99.99%</div>
+                      <div class="text-purple-300 text-sm">Uptime</div>
+                  </div>
+
+                  <div class="bg-white/5 border border-white/10 rounded-xl p-4 text-center backdrop-blur-md">
+                      <div class="text-2xl font-bold text-primary">24/7</div>
+                      <div class="text-purple-300 text-sm">Support</div>
+                  </div>
+
+                  <div class="bg-white/5 border border-white/10 rounded-xl p-4 text-center backdrop-blur-md">
+                      <div class="text-2xl font-bold text-primary">Global</div>
+                      <div class="text-purple-300 text-sm">Locations</div>
+                  </div>
+
+                  <div class="bg-white/5 border border-white/10 rounded-xl p-4 text-center backdrop-blur-md">
+                      <div class="text-2xl font-bold text-primary">DDoS</div>
+                      <div class="text-purple-300 text-sm">Protected</div>
+                  </div>
+
+              </div>
+          </div>
+
+          <!-- RIGHT ANIMATED CARD -->
+          <div class="md:w-1/2 flex justify-center">
+              <div class="relative group transition duration-500">
+
+                  <!-- Purple Glow -->
+                  <div class="absolute -inset-6 bg-purple-600/20 blur-3xl rounded-full"></div>
+
+                  <div class="relative bg-white/5 border border-purple-500/20 backdrop-blur-xl 
+                              rounded-2xl p-8 max-w-md w-full shadow-2xl
+                              transition group-hover:scale-[1.03]">
+
+                      <!-- Window header -->
+                      <div class="flex items-center mb-6">
+                          <span class="w-3 h-3 rounded-full bg-red-400 mr-2"></span>
+                          <span class="w-3 h-3 rounded-full bg-yellow-400 mr-2"></span>
+                          <span class="w-3 h-3 rounded-full bg-green-400 mr-2"></span>
+                          <div class="bg-purple-900/40 px-3 py-1 rounded-lg text-purple-200 text-sm">
+                              panel.floranodes.com
+                          </div>
+                      </div>
+
+                      <!-- Stats -->
+                      <div class="mb-6">
+                          <div class="text-lg font-bold mb-2 text-purple-200">Server Status</div>
+
+                          <div class="grid grid-cols-2 gap-4">
+                              <div class="bg-purple-900/30 rounded-lg p-4">
+                                  <div class="text-purple-300 font-bold text-xl">99.99%</div>
+                                  <div class="text-purple-200 text-sm">Uptime</div>
+                              </div>
+
+                              <div class="bg-purple-900/30 rounded-lg p-4">
+                                  <div class="text-purple-300 font-bold text-xl">5ms</div>
+                                  <div class="text-purple-200 text-sm">Latency</div>
+                              </div>
+                          </div>
+                      </div>
+
+                      <!-- Counters -->
+                      <div>
+                          <div class="text-lg font-bold text-purple-200 mb-2">Active Services</div>
+
+                          <div class="flex items-center justify-between mb-3">
+                              <span class="text-purple-300">Minecraft Servers</span>
+                              <span class="text-purple-400 font-mono text-lg" x-text="countMC"></span>
+                          </div>
+
+                          <div class="flex items-center justify-between">
+                              <span class="text-purple-300">VPS Instances</span>
+                              <span class="text-purple-400 font-mono text-lg" x-text="countVPS"></span>
+                          </div>
+                      </div>
+
+                      <!-- Performance Bar -->
+                      <div class="mt-6">
+                          <div class="flex justify-between mb-2 text-purple-300">
+                              <span class="text-sm">Performance</span>
+                              <span class="text-sm font-bold text-primary">99%</span>
+                          </div>
+                          <div class="h-2 bg-purple-900/40 rounded-full overflow-hidden">
+                              <div class="h-full w-full bg-primary rounded-full"></div>
+                          </div>
+                      </div>
+
+                  </div>
+
+              </div>
+          </div>
+
+      </div>
+  </div>
+
+</section>
+
+
+<section id="logo-marquee">
+  <div class="marquee-track">
+    <!-- logos -->
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Google_Cloud_logo.svg/2560px-Google_Cloud_logo.svg.png" alt="Google Cloud" />
+    <img src="https://www.hostzy.in/_next/image?url=%2Fadvertisement%2Fintel.png&w=128&q=60" alt="Intel" />
+    <img src="https://www.hostzy.in/_next/image?url=%2Fadvertisement%2Famd.png&w=128&q=60" alt="AMD" />
+    <img src="https://www.hostzy.in/_next/image?url=%2Fadvertisement%2Fpterodactyl.png&w=128&q=60" alt="Pterodactyl" />
+    <img src="https://www.hostzy.in/_next/image?url=%2Fadvertisement%2Fcloudflare.png&w=128&q=60" alt="Cloudflare" />
+    <!-- repeated logos for seamless loop -->
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Google_Cloud_logo.svg/2560px-Google_Cloud_logo.svg.png" alt="Google Cloud" />
+    <img src="https://www.hostzy.in/_next/image?url=%2Fadvertisement%2Fintel.png&w=128&q=60" alt="Intel" />
+    <img src="https://www.hostzy.in/_next/image?url=%2Fadvertisement%2Famd.png&w=128&q=60" alt="AMD" />
+    <img src="https://www.hostzy.in/_next/image?url=%2Fadvertisement%2Fpterodactyl.png&w=128&q=60" alt="Pterodactyl" />
+    <img src="https://www.hostzy.in/_next/image?url=%2Fadvertisement%2Fcloudflare.png&w=128&q=60" alt="Cloudflare" />
+  </div>
+</section>
+
+
+<!-- Features -->
+<section id="features" class="py-20 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto">
+    <!-- Header -->
+    <div class="text-center mb-20 fade-in">
+      <div class="inline-flex items-center text-primary bg-primary/10 px-4 py-1 rounded-full mb-4">
+        <i class="fas fa-bolt mr-2"></i>
+        <span>PERFORMANCE FEATURES</span>
+      </div>
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Cutting-Edge Infrastructure</h2>
+      <p class="text-xl text-gray-400 max-w-3xl mx-auto">Our hardware and network are optimized for maximum performance
+        and reliability</p>
+    </div>
+
+    <!-- Features Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Feature Card 1 -->
+      <div
+        class="feature-card bg-darker border border-gray-800 rounded-2xl p-8 fade-in hover:border-primary transition-all"
+        style="animation-delay: 0.2s">
+        <div class="feature-icon w-16 h-16 rounded-xl flex items-center justify-center mb-6 transition-transform">
+          <i class="fas fa-hdd text-2xl text-primary"></i>
+        </div>
+        <h3 class="text-xl font-bold mb-3">NVMe SSD Storage</h3>
+        <p class="text-gray-400">Ultra-fast storage solutions for reduced load times and smooth gameplay.</p>
+      </div>
+
+      <!-- Feature Card 2 -->
+      <div
+        class="feature-card bg-darker border border-gray-800 rounded-2xl p-8 fade-in hover:border-primary transition-all"
+        style="animation-delay: 0.5s">
+        <div class="feature-icon w-16 h-16 rounded-xl flex items-center justify-center mb-6 transition-transform">
+          <i class="fas fa-shield-alt text-2xl text-primary"></i>
+        </div>
+        <h3 class="text-xl font-bold mb-3">DDoS Protection</h3>
+        <p class="text-gray-400">Enterprise-grade protection against all types of DDoS attacks.</p>
+      </div>
+
+      <!-- Feature Card 3 -->
+      <div
+        class="feature-card bg-darker border border-gray-800 rounded-2xl p-8 fade-in hover:border-primary transition-all"
+        style="animation-delay: 0.6s">
+        <div class="feature-icon w-16 h-16 rounded-xl flex items-center justify-center mb-6 transition-transform">
+          <i class="fas fa-sync-alt text-2xl text-primary"></i>
+        </div>
+        <h3 class="text-xl font-bold mb-3">Instant Setup</h3>
+        <p class="text-gray-400">Automated provisioning gets your server running in seconds, not hours.</p>
+      </div>
+
+      <!-- Feature Card 4 -->
+      <div
+        class="feature-card bg-darker border border-gray-800 rounded-2xl p-8 fade-in hover:border-primary transition-all"
+        style="animation-delay: 0.7s">
+        <div class="feature-icon w-16 h-16 rounded-xl flex items-center justify-center mb-6 transition-transform">
+          <i class="fas fa-tachometer-alt text-2xl text-primary"></i>
+        </div>
+        <h3 class="text-xl font-bold mb-3">Intuitive Dashboard</h3>
+        <p class="text-gray-400">Easy-to-use control panel for server management and configuration.</p>
+      </div>
+
+      <!-- Feature Card 5 -->
+      <div
+        class="feature-card bg-darker border border-gray-800 rounded-2xl p-8 fade-in hover:border-primary transition-all"
+        style="animation-delay: 0.8s">
+        <div class="feature-icon w-16 h-16 rounded-xl flex items-center justify-center mb-6 transition-transform">
+          <i class="fas fa-headset text-2xl text-primary"></i>
+        </div>
+        <h3 class="text-xl font-bold mb-3">24/7 Expert Support</h3>
+        <p class="text-gray-400">Our team of specialists is always ready to assist with any issues.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Global Locations Section -->
+<section  class="py-20 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-20 fade-in">
+      <div class="inline-flex items-center text-primary bg-primary/10 px-4 py-1 rounded-full mb-4">
+        <i class="fas fa-bolt mr-2"></i>
+        <span>GLOBAL INFRASTRUCTURE</span>
+      </div>
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Global Locations</h2>
+      <p class="text-xl text-gray-400 max-w-3xl mx-auto">Strategically positioned servers worldwide for optimal performance and minimal latency.</p>
+    </div>
+  </div>
+
+  <!-- Map Container -->
+  <div class="relative mt-16 max-w-6xl mx-auto">
+    <img src="https://www.hostzy.in/_next/image?url=%2FWorld_map_with_points.svg&w=1920&q=75" 
+         alt="Global Map" class="w-full h-auto rounded-lg">
+
+    <!-- Map Pins -->
+    <div class="absolute  top-[27%] left-[13%] flex items-center space-x-2">
+      <div class="relative w-4 h-4">
+        <!-- Pulse Ring -->
+        <span class="absolute inset-0 rounded-full bg-green-500 opacity-70 animate-ping"></span>
+    
+        <!-- Core Dot -->
+        <span class="absolute inset-1 rounded-full bg-green-500 shadow-[0_0_12px_4px_rgba(34,197,94,0.9)]"></span>
+      </div>
+    
+      <p class="text-sm font-semibold text-white">Canada</p>
+    </div>
+
+    <div class="absolute top-[18%] left-[11%]  flex items-center space-x-2">
+       <div class="relative w-4 h-4">
+    <!-- Pulse Ring -->
+    <span class="absolute inset-0 rounded-full bg-green-500 opacity-70 animate-ping"></span>
+
+    <!-- Core Dot -->
+    <span class="absolute inset-1 rounded-full bg-green-500 shadow-[0_0_12px_4px_rgba(34,197,94,0.9)]"></span>
+  </div>
+
+      <p class="text-sm font-semibold text-white">USA</p>
+    </div>
+
+    <div class="absolute top-[65%] left-[25%] flex items-center space-x-2">
+       <div class="relative w-4 h-4">
+    <!-- Pulse Ring -->
+    <span class="absolute inset-0 rounded-full bg-green-500 opacity-70 animate-ping"></span>
+
+    <!-- Core Dot -->
+    <span class="absolute inset-1 rounded-full bg-green-500 shadow-[0_0_12px_4px_rgba(34,197,94,0.9)]"></span>
+  </div>
+
+      <p class="text-sm font-semibold text-white">Brazil</p>
+    </div>
+
+    <div class="absolute top-[21%] left-[47%] flex items-center space-x-2">
+       <div class="relative w-4 h-4">
+    <!-- Pulse Ring -->
+    <span class="absolute inset-0 rounded-full bg-green-500 opacity-70 animate-ping"></span>
+
+    <!-- Core Dot -->
+    <span class="absolute inset-1 rounded-full bg-green-500 shadow-[0_0_12px_4px_rgba(34,197,94,0.9)]"></span>
+  </div>
+
+      <div class="text-left">
+        <p class="text-sm font-semibold text-white">Germany</p>
+      </div>
+    </div>
+
+    <div class="absolute top-[19%] left-[42%] flex items-center space-x-2">
+       <div class="relative w-4 h-4">
+    <!-- Pulse Ring -->
+    <span class="absolute inset-0 rounded-full bg-green-500 opacity-70 animate-ping"></span>
+
+    <!-- Core Dot -->
+    <span class="absolute inset-1 rounded-full bg-green-500 shadow-[0_0_12px_4px_rgba(34,197,94,0.9)]"></span>
+  </div>
+
+      <p class="text-sm font-semibold text-white">UK</p>
+    </div>
+
+    <div class="absolute top-[23%] left-[44%] flex items-center space-x-2">
+       <div class="relative w-4 h-4">
+    <!-- Pulse Ring -->
+    <span class="absolute inset-0 rounded-full bg-green-500 opacity-70 animate-ping"></span>
+
+    <!-- Core Dot -->
+    <span class="absolute inset-1 rounded-full bg-green-500 shadow-[0_0_12px_4px_rgba(34,197,94,0.9)]"></span>
+  </div>
+
+      <p class="text-sm font-semibold text-white">France</p>
+    </div>
+
+    <div class="absolute top-[18%] left-[69%] flex items-center space-x-2">
+       <div class="relative w-4 h-4">
+    <!-- Pulse Ring -->
+    <span class="absolute inset-0 rounded-full bg-green-500 opacity-70 animate-ping"></span>
+
+    <!-- Core Dot -->
+    <span class="absolute inset-1 rounded-full bg-green-500 shadow-[0_0_12px_4px_rgba(34,197,94,0.9)]"></span>
+  </div>
+
+      <p class="text-sm font-semibold text-white">Russia</p>
+    </div>
+
+    <!-- Asia -->
+    <div class="absolute top-[40%] left-[69%] flex items-center space-x-2">
+       <div class="relative w-4 h-4">
+    <!-- Pulse Ring -->
+    <span class="absolute inset-0 rounded-full bg-green-500 opacity-70 animate-ping"></span>
+
+    <!-- Core Dot -->
+    <span class="absolute inset-1 rounded-full bg-green-500 shadow-[0_0_12px_4px_rgba(34,197,94,0.9)]"></span>
+  </div>
+
+      <div class="text-left">
+        <p class="text-sm font-semibold text-white">India</p>
+      </div>
+    </div>
+
+    <div class="absolute top-[25%] left-[84%] flex items-center space-x-2">
+       <div class="relative w-4 h-4">
+    <!-- Pulse Ring -->
+    <span class="absolute inset-0 rounded-full bg-green-500 opacity-70 animate-ping"></span>
+
+    <!-- Core Dot -->
+    <span class="absolute inset-1 rounded-full bg-green-500 shadow-[0_0_12px_4px_rgba(34,197,94,0.9)]"></span>
+  </div>
+
+      <p class="text-sm font-semibold text-white">South Korea</p>
+    </div>
+
+    <div class="absolute top-[40%] left-[83%] flex items-center space-x-2">
+       <div class="relative w-4 h-4">
+    <!-- Pulse Ring -->
+    <span class="absolute inset-0 rounded-full bg-green-500 opacity-70 animate-ping"></span>
+
+    <!-- Core Dot -->
+    <span class="absolute inset-1 rounded-full bg-green-500 shadow-[0_0_12px_4px_rgba(34,197,94,0.9)]"></span>
+  </div>
+
+      <p class="text-sm font-semibold text-white">Taiwan</p>
+    </div>
+
+    <div class="absolute top-[57%] left-[81%] flex items-center space-x-2">
+       <div class="relative w-4 h-4">
+    <!-- Pulse Ring -->
+    <span class="absolute inset-0 rounded-full bg-green-500 opacity-70 animate-ping"></span>
+
+    <!-- Core Dot -->
+    <span class="absolute inset-1 rounded-full bg-green-500 shadow-[0_0_12px_4px_rgba(34,197,94,0.9)]"></span>
+  </div>
+
+      <p class="text-sm font-semibold text-white">Singapore</p>
+    </div>
+
+    <div class="absolute top-[50%] left-[84%] flex items-center space-x-2">
+       <div class="relative w-4 h-4">
+    <!-- Pulse Ring -->
+    <span class="absolute inset-0 rounded-full bg-green-500 opacity-70 animate-ping"></span>
+
+    <!-- Core Dot -->
+    <span class="absolute inset-1 rounded-full bg-green-500 shadow-[0_0_12px_4px_rgba(34,197,94,0.9)]"></span>
+  </div>
+
+      <p class="text-sm font-semibold text-white">Japan</p>
+    </div>
+
+  </div>
+</section>
+
+<style>.bg-green-500,
+  .bg-green-500\/10,
+  .bg-green-500\/20,
+  .bg-green-500\/30 {
+    background-color: #9b4dff !important;
+  }
+  
+  .shadow-\[0_0_12px_4px_rgba\(34,197,94,0\.9\)\] {
+    box-shadow: 0 0 12px 4px rgba(155,77,255,0.9) !important;
+  }
+  
+  .animate-ping.bg-green-500 {
+    background-color: #9b4dff !important;
+    opacity: 0.7 !important;
+  }</style>
+<!-- Plans Section -->
+<section id="plans" class="py-20 px-4 sm:px-6 lg:px-8 bg-darker">
+  <div class="max-w-7xl mx-auto text-center mb-16 fade-in">
+    <div class="inline-flex items-center text-primary bg-primary/10 px-4 py-1 rounded-full mb-4">
+      <i class="fas fa-bolt mr-2"></i>
+      <span>PRICING PLANS</span>
+    </div>
+    <h2 class="text-3xl md:text-4xl font-bold mb-4">PLANS</h2>
+    <p class="text-gray-400 max-w-2xl mx-auto">
+      Choose the perfect plan for your Minecraft servers or VPS instances.
+    </p>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+    
+    <!-- Minecraft Plan -->
+    <div class="relative rounded-2xl overflow-hidden border border-gray-800">
+      <!-- Background Image -->
+      <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://assets.nintendo.com/image/upload/ar_16:9,c_lpad,w_1240/b_white/f_auto/q_auto/store/software/switch/70010000000964/a28a81253e919298beab2295e39a56b7a5140ef15abdb56135655e5c221b2a3a');"></div>
+      <!-- Overlay -->
+      <div class="absolute inset-0 bg-black/60"></div>
+
+      <div class="relative p-8 flex flex-col items-center space-y-6 text-white">
+        <h3 class="text-xl font-bold mb-2">MINECRAFT</h3>
+        <div class="text-gray-300 text-center mb-4">Available CPU Types</div>
+
+        <!-- CPU Sub-tabs -->
+        <div class="flex space-x-3">
+          <button class="px-3 py-1 rounded-lg bg-gray-800/70 text-white hover:bg-primary transition">Intel Xeon</button>
+          <button class="px-3 py-1 rounded-lg bg-gray-800/70 text-white hover:bg-primary transition">AMD EPYC</button>
+          <button class="px-3 py-1 rounded-lg bg-gray-800/70 text-white hover:bg-primary transition">Ryzen</button>
+        </div>
+
+        <!-- Features List -->
+        <ul class="mt-6 text-left space-y-2 w-full">
+          <li><i class="fas fa-memory mr-2"></i> RAM: 2GB / 4GB / 8GB</li>
+          <li><i class="fas fa-microchip mr-2"></i> CPU Cores: 1 / 2 / 4</li>
+          <li><i class="fas fa-hdd mr-2"></i> Storage: 10GB / 20GB / 50GB SSD</li>
+          <li><i class="fas fa-network-wired mr-2"></i> Bandwidth: 500GB / 1TB / Unlimited</li>
+          <li><i class="fas fa-map-marker-alt mr-2"></i> Dedicated IP: Included</li>
+          <li><i class="fas fa-shield-alt mr-2"></i> DDoS Protection: Enabled</li>
+          <li><i class="fas fa-cogs mr-2"></i> Full FTP & Control Panel Access</li>
+        </ul>
+
+        <a href="/mc" class="mt-6 bg-primary hover:bg-primary-dark text-white px-6 py-3 rounded-lg font-semibold w-full text-center transition">
+          Get Started
+        </a>
+      </div>
+    </div>
+
+    <!-- VPS Plan -->
+    <div class="relative rounded-2xl overflow-hidden border border-gray-800">
+      <!-- Background Image -->
+      <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://res.cloudinary.com/jerrick/image/upload/v1750651548/6858d29c44792a001dfb0b2e.jpg');"></div>
+      <!-- Overlay -->
+      <div class="absolute inset-0 bg-black/60"></div>
+
+      <div class="relative p-8 flex flex-col items-center space-y-6 text-white">
+        <h3 class="text-xl font-bold mb-2">VPS</h3>
+        <div class="text-gray-300 text-center mb-4">Available OS</div>
+
+        <!-- OS Sub-tabs -->
+        <div class="flex space-x-3">
+          <button class="px-3 py-1 rounded-lg bg-gray-800/70 text-white hover:bg-primary transition">Ubuntu</button>
+          <button class="px-3 py-1 rounded-lg bg-gray-800/70 text-white hover:bg-primary transition">Debian</button>
+          <button class="px-3 py-1 rounded-lg bg-gray-800/70 text-white hover:bg-primary transition">CentOS</button>
+          <button class="px-3 py-1 rounded-lg bg-gray-800/70 text-white hover:bg-primary transition">Windows</button>
+        </div>
+
+        <!-- Features List -->
+        <ul class="mt-6 text-left space-y-2 w-full">
+          <li><i class="fas fa-memory mr-2"></i> RAM: 4GB / 8GB / 16GB</li>
+          <li><i class="fas fa-microchip mr-2"></i> CPU Cores: 2 / 4 / 8</li>
+          <li><i class="fas fa-hdd mr-2"></i> Storage: 50GB / 100GB / 200GB SSD</li>
+          <li><i class="fas fa-network-wired mr-2"></i> Bandwidth: 1TB / 2TB / Unlimited</li>
+          <li><i class="fas fa-map-marker-alt mr-2"></i> Dedicated IP: Optional</li>
+          <li><i class="fas fa-shield-alt mr-2"></i> DDoS Protection: Enabled</li>
+          <li><i class="fas fa-terminal mr-2"></i> Full Root & SSH Access</li>
+        </ul>
+
+        <a href="/vps" class="mt-6 bg-primary hover:bg-primary-dark text-white px-6 py-3 rounded-lg font-semibold w-full text-center transition">
+          Get Started
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- Why Choose Us Section -->
+<section id="why-us" class="py-20 px-4 sm:px-6 lg:px-8 bg-darker">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-16 fade-in">
+      <div class="inline-flex items-center text-primary bg-primary/10 px-4 py-1 rounded-full mb-4">
+        <i class="fas fa-thumbs-up mr-2"></i>
+        <span>WHY CHOOSE US</span>
+      </div>
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Reliable, Fast & Secure Hosting</h2>
+      <p class="text-xl text-gray-400 max-w-3xl mx-auto">We focus on speed, uptime, and providing a seamless hosting experience.</p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div class="bg-darker border border-gray-800 rounded-2xl p-8 fade-in hover:border-primary transition-all">
+        <i class="fas fa-tachometer-alt text-3xl text-primary mb-4"></i>
+        <h3 class="font-bold mb-2">Ultra Fast</h3>
+        <p class="text-gray-400">NVMe SSDs and high-speed networks for maximum performance.</p>
+      </div>
+      <div class="bg-darker border border-gray-800 rounded-2xl p-8 fade-in hover:border-primary transition-all">
+        <i class="fas fa-shield-alt text-3xl text-primary mb-4"></i>
+        <h3 class="font-bold mb-2">Secure</h3>
+        <p class="text-gray-400">DDoS protection and secure servers keep your data safe.</p>
+      </div>
+      <div class="bg-darker border border-gray-800 rounded-2xl p-8 fade-in hover:border-primary transition-all">
+        <i class="fas fa-server text-3xl text-primary mb-4"></i>
+        <h3 class="font-bold mb-2">Reliable</h3>
+        <p class="text-gray-400">99.99% uptime ensures your servers are always online.</p>
+      </div>
+      <div class="bg-darker border border-gray-800 rounded-2xl p-8 fade-in hover:border-primary transition-all">
+        <i class="fas fa-headset text-3xl text-primary mb-4"></i>
+        <h3 class="font-bold mb-2">Support</h3>
+        <p class="text-gray-400">24/7 expert support ready to help at any time.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Call-to-Action Section -->
+<section class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-primary to-accent text-white">
+  <div class="max-w-7xl mx-auto text-center fade-in">
+    <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Start Hosting?</h2>
+    <p class="text-xl mb-8">Choose your plan today and experience ultra-fast, secure, and reliable hosting.</p>
+    <a href="#contact" class="bg-darker hover:bg-gray-800 text-white px-8 py-4 rounded-lg font-semibold transition-all">Get Started Now</a>
+  </div>
+</section>
+
+
+<!-- Contact Us -->
+<section id="contact" class="py-20 px-4 sm:px-6 lg:px-8 bg-darker">
+  <div class="max-w-7xl mx-auto">
+    <!-- Header -->
+    <div class="text-center mb-16 fade-in">
+      <div class="inline-flex items-center text-primary bg-primary/10 px-4 py-1 rounded-full mb-4">
+        <i class="fas fa-envelope mr-2"></i>
+        <span>CONTACT US</span>
+      </div>
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Get In Touch</h2>
+      <p class="text-xl text-gray-400 max-w-3xl mx-auto">Have questions or need support? Send us a message and we'll get
+        back to you promptly.</p>
+    </div>
+
+    <!-- Form -->
+    <div class="max-w-3xl mx-auto">
+      <form method="POST" class="bg-gray-900 border border-gray-800 rounded-2xl p-8 shadow-lg flex flex-col gap-6">
+        {% csrf_token %}
+        {{ form.non_field_errors }}
+
+        <div class="flex flex-col">
+          {{ form.name.label_tag }}
+          {{ form.name }}
+          {{ form.name.errors }}
+        </div>
+
+        <div class="flex flex-col">
+          {{ form.email.label_tag }}
+          {{ form.email }}
+          {{ form.email.errors }}
+        </div>
+
+        <div class="flex flex-col">
+          {{ form.discord.label_tag }}
+          {{ form.discord }}
+          {{ form.discord.errors }}
+        </div>
+
+        <div class="flex flex-col">
+          {{ form.message.label_tag }}
+          {{ form.message }}
+          {{ form.message.errors }}
+        </div>
+
+        <button type="submit"
+          class="bg-primary hover:bg-primary-dark text-white font-semibold px-6 py-3 rounded-lg transition-all">
+          Send Message
+        </button>
+      </form>
+      {% if messages %}
+      <div class="fixed top-4 right-4 space-y-2 z-50">
+        {% for message in messages %}
+        <div
+          class="px-4 py-2 rounded-lg text-white {% if message.tags == 'success' %}bg-green-500{% else %}bg-red-500{% endif %}">
+          {{ message }}
+        </div>
+        {% endfor %}
+      </div>
+      {% endif %}
+
+    </div>
+  </div>
+</section>
+
+<script>
+  // Disable image drag
+  document.addEventListener("dragstart", function (e) {
+    if (e.target.tagName === "IMG") {
+      e.preventDefault();
+    }
+  });
+
+  // Disable right click on images
+  document.addEventListener("contextmenu", function (e) {
+    if (e.target.tagName === "IMG") {
+      e.preventDefault();
+    }
+  });
+</script>
+
+{% endblock content %}

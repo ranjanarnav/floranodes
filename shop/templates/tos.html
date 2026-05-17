@@ -1,0 +1,177 @@
+{% extends "layouts/master.html" %}
+{% load static %}
+{% block content %}
+<!-- Hero Section - Tos -->
+<section class="hero-pattern relative overflow-hidden">
+  <div class="absolute inset-0 z-0">
+    <div class="absolute top-0 left-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxjaXJjbGUgY3g9IjEwIiBjeT0iMTAiIHI9IjAuNSIgZmlsbD0icmdiYSg1OSwgMTMwLCAyNDYsIDAuMSkiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjcGF0dGVybikiLz48L3N2Zz4=')]"></div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28 relative z-10 text-center fade-in">
+    <div class="bg-primary/10 border border-primary/20 rounded-lg px-6 py-2 w-fit mx-auto mb-6 shadow-md">
+      <span class="text-primary font-medium"><i class="fas fa-gavel mr-2"></i> TERMS OF SERVICE
+    </div>
+
+    <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-4">
+      <span class="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+        Terms of Service
+      </span>
+    </h1>
+
+    <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+      Clear, simple and transparent
+    </p>
+  </div>
+</section>
+
+
+<!-- ToS Content -->
+<section class="py-20 px-4 sm:px-6 lg:px-8 bg-darker/30">
+  <div class="max-w-5xl mx-auto">
+    <div class="bg-darker border border-gray-800 rounded-2xl p-8 md:p-12 shadow-xl fade-in">
+
+      <!-- TLDR -->
+      <div class="bg-primary/5 border border-primary/30 rounded-xl p-6 mb-12">
+        <h2 class="text-2xl font-bold text-primary mb-3 flex items-center">
+          <i class="fas fa-book-open mr-3"></i> TL;DR Summary
+        </h2>
+        <p class="text-gray-300 leading-relaxed">
+          This is the simplified version of our Terms of Service. By using FloraNodes services,
+          you fully agree to everything listed below.
+        </p>
+      </div>
+
+      <div class="space-y-12 text-gray-300 leading-relaxed">
+
+        <!-- General -->
+        <div>
+          <h2 class="section-title">I. General</h2>
+          <ul class="styled-list">
+            <li>Using FloraNodes means you agree to these Terms.</li>
+            <li>We try our best for 24/7 uptime, but no hosting can guarantee 100% perfect availability.</li>
+          </ul>
+        </div>
+
+        <!-- File Uploads -->
+        <div class="bg-red-900/20 border border-red-800/60 rounded-xl p-6">
+          <h2 class="section-title text-red-400">II. File Uploads & Server Content</h2>
+
+          <ul class="styled-list">
+            <li>We may remove problematic files such as huge logs or corrupted world files.</li>
+            <li class="mt-3 font-semibold">You are NOT allowed to upload:</li>
+
+            <ul class="ml-6 mt-3 space-y-2">
+              <li class="flex items-center"><span class="text-red-400 mr-2">✕</span> Pirated or cracked plugins/mods</li>
+              <li class="flex items-center"><span class="text-red-400 mr-2">✕</span> Malware, RATs, backdoors</li>
+              <li class="flex items-center"><span class="text-red-400 mr-2">✕</span> Bypass tools for RAM/CPU/port limits</li>
+              <li class="flex items-center"><span class="text-red-400 mr-2">✕</span> External control panel plugins</li>
+              <li class="flex items-center"><span class="text-red-400 mr-2">✕</span> Runtime injection or plugin modification tools</li>
+            </ul>
+          </ul>
+        </div>
+
+        <!-- Backups -->
+        <div>
+          <h2 class="section-title">III. Backups & Data Loss</h2>
+          <ul class="styled-list">
+            <li>We provide 1-click backup tools.</li>
+            <li>You are fully responsible for keeping your own backups.</li>
+            <li>We are not responsible for data loss of any kind.</li>
+          </ul>
+        </div>
+
+        <!-- Payments -->
+        <div>
+          <h2 class="section-title">IV. Payments & Credits</h2>
+          <ul class="styled-list">
+            <li>All payments are final.</li>
+            <li>Chargebacks = instant permanent ban.</li>
+            <li>Violating ToS removes your server with no refund.</li>
+            <li>Credits are non-refundable and non-transferable.</li>
+          </ul>
+        </div>
+
+        <!-- Support -->
+        <div>
+          <h2 class="section-title">V. Support</h2>
+          <ul class="styled-list">
+            <li>We try to respond as fast as possible.</li>
+            <li>Spamming support reduces your priority.</li>
+            <li>Abusive/rude behavior = account ban.</li>
+          </ul>
+        </div>
+
+        <!-- Prohibited -->
+        <div class="bg-red-900/20 border border-red-800/60 rounded-xl p-6">
+          <h2 class="section-title text-red-400">VI. General Prohibited Actions</h2>
+
+          <ul class="styled-list">
+            <li>You are responsible for everything done on your account.</li>
+            <li>No DDoS tools, scanning, probing or exploits.</li>
+            <li>No reverse engineering or node tampering.</li>
+            <li>No VPN/Tor for account creation.</li>
+            <li>No multiple accounts.</li>
+            <li>No bypassing ads, rate limits, or restrictions.</li>
+          </ul>
+        </div>
+
+        <!-- Suspension -->
+        <div>
+          <h2 class="section-title">VII. Suspension & Termination</h2>
+          <ul class="styled-list">
+            <li>We can suspend or terminate any service if Terms are violated.</li>
+            <li>Severe violations = instant account termination.</li>
+            <li>No backups are provided after a ToS-breaking termination.</li>
+          </ul>
+        </div>
+
+        <!-- Beta -->
+        <div>
+          <h2 class="section-title">VIII. Beta Features</h2>
+          <p>Confidential features must not be publicly shared without permission.</p>
+        </div>
+
+      </div>
+
+      <!-- Footer -->
+      <div class="mt-16 pt-10 border-t border-gray-700 text-center">
+        <p class="text-gray-400">
+          By using FloraNodes services, you accept these Terms.
+        </p>
+        <a href="/" class="inline-block mt-6 px-8 py-3 bg-primary/20 hover:bg-primary/30 border border-primary/50 rounded-lg transition">
+          ← Back to Homepage
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Premium Styles -->
+<style>
+  .section-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #c084fc;
+    margin-bottom: 0.8rem;
+  }
+  .styled-list {
+    list-style: none;
+    margin-left: 1.6rem;
+  }
+  .styled-list li {
+    position: relative;
+    padding-left: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+  .styled-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #b57aff;
+    font-size: 1.4rem;
+    top: -2px;
+  }
+</style>
+
+{% endblock content %}

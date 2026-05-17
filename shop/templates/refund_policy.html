@@ -1,0 +1,124 @@
+{% extends "layouts/master.html" %}
+{% load static %}
+{% block content %}
+
+<!-- Hero Section - Refund Policy -->
+<section class="hero-pattern relative overflow-hidden">
+  <div class="absolute inset-0 z-0">
+    <div class="absolute top-0 left-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxjaXJjbGUgY3g9IjEwIiBjeT0iMTAiIHI9IjAuNSIgZmlsbD0icmdiYSg1OSwgMTMwLCAyNDYsIDAuMSkiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjcGF0dGVybikiLz48L3N2Zz4=')]"></div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28 relative z-10 text-center fade-in">
+    <div class="bg-primary/10 border border-primary/20 rounded-lg px-6 py-2 w-fit mx-auto mb-6 shadow-md">
+      <span class="text-primary font-medium"><i class="fas fa-shield-halved mr-2"></i> REFUND POLICY</span>
+    </div>
+
+    <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-4">
+      <span class="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+        Refund Policy
+      </span>
+    </h1>
+
+    <p class="text-xl text-gray-300">Clear, Transparent & Strict Refund Terms</p>
+  </div>
+</section>
+
+<!-- Refund Content -->
+<section class="py-20 px-4 sm:px-6 lg:px-8 bg-darker/40">
+  <div class="max-w-5xl mx-auto">
+    <div class="bg-darker border border-purple-900/40 rounded-2xl p-10 md:p-14 shadow-[0_0_40px_rgba(155,77,255,0.12)] fade-in">
+
+      <!-- Summary Box -->
+      <div class="bg-primary/10 border border-primary/30 rounded-xl p-6 mb-12 shadow-inner">
+        <h2 class="text-3xl font-bold text-primary mb-3 flex items-center">
+          <i class="fas fa-file-circle-exclamation mr-3"></i> Summary
+        </h2>
+        <p class="text-gray-300 text-lg leading-relaxed">
+          All purchases made on FloraNodes are <strong>final and non-refundable</strong>.  
+          Please read our full policy carefully before purchasing any services or credits.
+        </p>
+      </div>
+
+      <div class="space-y-12 text-gray-300 leading-relaxed">
+
+        <!-- Section -->
+        <div>
+          <h2 class="section-title">I. No Refunds</h2>
+          <p class="section-text">
+            Every purchase made on FloraNodes is strictly <strong>non-refundable</strong>, regardless of the reason.
+          </p>
+        </div>
+
+        <!-- Section -->
+        <div>
+          <h2 class="section-title">II. Chargebacks</h2>
+          <ul class="styled-list">
+            <li>Any chargeback results in an instant <strong>permanent ban</strong>.</li>
+            <li>All servers & data will be <strong>deleted immediately</strong> with no recovery.</li>
+          </ul>
+        </div>
+
+        <!-- Section -->
+        <div>
+          <h2 class="section-title">III. Credits</h2>
+          <ul class="styled-list">
+            <li>Credits cannot be refunded to any payment method.</li>
+            <li>Unused credits are <strong>not eligible</strong> for refund.</li>
+            <li>Credits cannot be transferred to another account.</li>
+          </ul>
+        </div>
+
+        <!-- Section -->
+        <div>
+          <h2 class="section-title">IV. Mistaken Purchases</h2>
+          <p class="section-text">
+            Incorrect plan, extra server, wrong configuration — all such purchases are <strong>non-refundable</strong>.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="mt-16 pt-10 border-t border-purple-800/40 text-center">
+        <a href="/" class="px-8 py-3 bg-primary/20 hover:bg-primary/30 border border-primary/50 rounded-lg">
+          ← Return to Homepage
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Section Styles -->
+<style>
+  .section-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #b57aff;
+    margin-bottom: 0.8rem;
+  }
+  .section-text {
+    font-size: 1.05rem;
+    color: #d3c8ff;
+  }
+  .styled-list {
+    margin-left: 1.5rem;
+    padding-left: 0.5rem;
+    list-style: none;
+  }
+  .styled-list li {
+    position: relative;
+    padding-left: 1.4rem;
+    margin-bottom: 0.6rem;
+    font-size: 1.05rem;
+  }
+  .styled-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    top: 2px;
+    color: #b57aff;
+    font-size: 1.4rem;
+  }
+</style>
+
+{% endblock content %}
